@@ -49,7 +49,11 @@ Am impartit userii aplicatii web in 3 categorii:
   Done till now:
 
 - pagini template cu diferite actiuni de html/css reponsive . Nu sunt legate/imbinate intre ele inca.
+
 - putin java script pentru butoane calendar
+
 - tutorial mvc in care incercam sa aducem paginile si sa le punem actiuni.
-- c4model diagrama L1 din cele 4.
+
+- c4model diagrama L1 din cele 4.  
+ Format: ![c4_modelL1](https://i.imgur.com/SuKtgxn.png)
     
