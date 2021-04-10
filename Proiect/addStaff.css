@@ -9,7 +9,6 @@ body{
 
  .addStaff{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);
     background-color: #f1f1f1;
@@ -114,5 +113,29 @@ body{
  
  }
  
-
+ @media (max-width :415px) {
+  .addStaff{
+  background-color: #f1f1f1;
+  padding:0.5em;
+  margin:1em;
+  border-radius: 5px;
+  }
+  
+element.style {
+}
+.addStaff .addStaff___photo {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: block;
+    position: relative;
+}
+.addStaff .addStaff__data {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+}
  

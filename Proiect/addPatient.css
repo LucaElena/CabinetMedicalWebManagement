@@ -55,4 +55,19 @@ body{
 button:hover {
     opacity: 0.8;
 } 
+@media (max-width :375px) {
+    .addPatient{
+        border-radius: 5px;
+        background-color: #f1f1f1;
+        transform: translate(-50%, 30%);
+        left:50%;
+        bottom: 50px;
+        padding: 20px;
 
+        position:relative;
+        text-align: center;
+        width: 250px;
+
+    }
+
+}
