@@ -49,6 +49,6 @@ Am impartit userii aplicatii web in 3 categorii:
   Done till now:
 
 - pagini template cu diferite actiuni de html/css reponsive . Nu sunt legate/imbinate intre ele inca.
-- putin java script pentru butoate calendar
+- putin java script pentru butoane calendar
 - tutorial mvc in care incercam sa aducem paginile si sa le punem actiuni. 
     
