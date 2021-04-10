@@ -50,5 +50,6 @@ Am impartit userii aplicatii web in 3 categorii:
 
 - pagini template cu diferite actiuni de html/css reponsive . Nu sunt legate/imbinate intre ele inca.
 - putin java script pentru butoane calendar
-- tutorial mvc in care incercam sa aducem paginile si sa le punem actiuni. 
+- tutorial mvc in care incercam sa aducem paginile si sa le punem actiuni.
+- c4model diagrama L1 din cele 4.
     
