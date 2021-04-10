@@ -44,4 +44,11 @@ Am impartit userii aplicatii web in 3 categorii:
   -poate sa isi vada rezultatul analizelor;
   
   -va putea comunica in timp real direct in interiorul platformei via un chat text si audio cu medicul;
+  
+  
+  Done till now:
+
+- pagini template cu diferite actiuni de html/css reponsive . Nu sunt legate/imbinate intre ele inca.
+- putin java script pentru butoate calendar
+- tutorial mvc in care incercam sa aducem paginile si sa le punem actiuni. 
     
