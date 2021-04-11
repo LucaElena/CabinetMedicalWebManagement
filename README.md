@@ -54,7 +54,7 @@ Am impartit userii aplicatii web in 3 categorii:
 
 - tutorial mvc in care incercam sa aducem paginile si sa le punem actiuni.
 
--inceput de documentatie in standard-ul Scholarly HTML 
+- inceput de documentatie in standard-ul Scholarly HTML 
 
 - c4model diagrama L1 din cele 4.  
 ![c4_modelL1](https://i.imgur.com/SuKtgxn.png)
