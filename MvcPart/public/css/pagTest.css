@@ -1,14 +1,81 @@
 body{
+   
     margin:0;
     padding: 0;
     height: 100vh;
     width: 100vw;
 
-    
- }
+}
 
- .addStaff{
+header{
+    padding: 15px;
+    box-shadow: 0 0 3px black  ;/*linie umbra jos heder pe x,y  cu raza de estompare*/
+    background-color: rgb(86, 170, 108);
+    
+}
+ 
+header li{
+    display: inline;/*toate butoanele in linie */
+    padding-left: 45px;
+
+}
+
+
+header li .header_button {
+    color: black;
+    text-decoration: none;
+    padding: 13px;
+    transition:.3s ease;
+    border-radius: 12px;
+    font-family:Arial;
+}
+
+header li .header_button:hover{
+    /*color:blue; /*colorare a butoanelor la atingere*/
+    background-color:rgb(41, 107, 21) ;
+    color: rgb(20, 54, 28);
+    text-decoration: none;
+    
+} 
+
+
+header ul .login a{
+   
+    color: black;
+    text-decoration: none;
+    position: relative;
+    font-family:Arial;
+    padding-right: 30px;
+    float: right;
+    border-radius: 5px;
+    transition:.3s ease;
+    padding: 13px;
+    top: -15px;
+    
+  
+}
+
+
+header ul .login a:hover{
+    
+    background-color:rgb(41, 107, 21) ;
+    color: rgb(20, 54, 28);
+    text-decoration: none;
+    
+
+}
+header ul li a .logo{
+    height: 5em;
+    width: 5em ;
+    float: left;
+    margin-top:-35px;
+    border-radius:35px ;
+}
+
+
+.body > .addStaff{
     display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);
     background-color: #f1f1f1;
@@ -20,11 +87,10 @@ body{
 
  .addStaff .addStaff__header {
     grid-column-start: 1;
-    grid-column-end: 6;
+    grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 2;
     text-align: center;
-    background-color: white;
   }
  .addStaff .addStaff___photo {
     grid-column-start: 1;
@@ -113,29 +179,5 @@ body{
  
  }
  
- @media (max-width :415px) {
-  .addStaff{
-  background-color: #f1f1f1;
-  padding:0.5em;
-  margin:1em;
-  border-radius: 5px;
-  }
-  
-element.style {
-}
-.addStaff .addStaff___photo {
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    display: block;
-    position: relative;
-}
-.addStaff .addStaff__data {
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 3;
-  grid-row-end: 4;
-}
-}
+
  

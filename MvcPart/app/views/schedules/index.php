@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/schedulingAppointmentsClient.css">
+    <link rel="stylesheet" href="/css/schedulingAppointmentsAdmin.css">
+    <link rel="stylesheet" href="/css/PagG.css">
     <title>Book Appointment</title>
 </head>
 <body>
+    <header>
+        <ul>
+            <li>
+                <a href="#" ><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
+            </li>
+            <li>
+                <a class="header_button" href="/schedules">Schedules</a>
+            </li>
+            <li>
+                <a class="header_button" href="/files">Patients Files</a>
+            </li>
+            <li>
+                <a class="header_button" href="/adduser/patient">Invite Patient</a>
+            </li>
+            <li>
+                <a class="header_button" href="/chat">Chat</a>
+            </li>
+            
+            <li class="login">
+                <a href="/login">Log In</a>
+            </li>
+        </ul>
+    </header>
     <div class="schedul">
         <div class="schedul__header"><h3>Book Appointment</h3></div>
         
@@ -79,17 +103,17 @@
 
         </div>
         <div class="schedule__calendar">
-            <div class="schedule__calendar__month">JANUARY 2021</div>
-            <button type="button" class="schedule__calendar__left_month_btn">&#9668;</button>
-            <button type="button" class="schedule__calendar__left_week_btn">&#9668;</button>
+            <div class="schedule__calendar__month" id="selected_month">JANUARY 2021</div>
+            <button type="button" class="schedule__calendar__left_month_btn" id="month_leftBtn">&#9668;</button>
+            <button type="button" class="schedule__calendar__left_week_btn" id="week_leftBtn">&#9668;</button>
             <div class="schedule__calendar__inside">
-                <div class="schedule__calendar__inside__head"> <div class="schedule__calendar__inside__day">MON 05/04</div></div>
-                <div class="schedule__calendar__inside__head"> <div class="schedule__calendar__inside__day">TUE 06/04</div></div>
-                <div class="schedule__calendar__inside__head"> <div class="schedule__calendar__inside__day">WED 07/04</div></div>
-                <div class="schedule__calendar__inside__head"> <div class="schedule__calendar__inside__day">THU 08/04</div></div>
-                <div class="schedule__calendar__inside__head"> <div class="schedule__calendar__inside__day">FRI 09/04</div></div>
-                <div class="schedule__calendar__inside__head"> <div class="schedule__calendar__inside__day">SAT 10/04</div></div>
-                <div class="schedule__calendar__inside__head"> <div class="schedule__calendar__inside__day">SUN 11/04</div></div>
+                <div class="schedule__calendar__inside__head"> <div class="schedule__calendar__inside__day" id="day_0_schedule" >MON 05/04</div></div>
+                <div class="schedule__calendar__inside__head"> <div class="schedule__calendar__inside__day" id="day_1_schedule" >TUE 06/04</div></div>
+                <div class="schedule__calendar__inside__head"> <div class="schedule__calendar__inside__day" id="day_2_schedule" >WED 07/04</div></div>
+                <div class="schedule__calendar__inside__head"> <div class="schedule__calendar__inside__day" id="day_3_schedule" >THU 08/04</div></div>
+                <div class="schedule__calendar__inside__head"> <div class="schedule__calendar__inside__day" id="day_4_schedule" >FRI 09/04</div></div>
+                <div class="schedule__calendar__inside__head"> <div class="schedule__calendar__inside__day" id="day_5_schedule" >SAT 10/04</div></div>
+                <div class="schedule__calendar__inside__head"> <div class="schedule__calendar__inside__day" id="day_6_schedule" >SUN 11/04</div></div>
     
                 <div class="schedule__calendar__inside__hours_btn">
                     <button type="button" class="schedule__calendar__inside__hours_btn__bussy" value = "08:00" id = "calendar_row1_col1"> 
@@ -164,11 +188,11 @@
                     <button type="button" class="schedule__calendar__inside__hours_btn__open" value = "12:00" id = "calendar_row7_col5"> 12:00</button></div>
                 
                 
-                <button type="button" class="schedule__calendar__inside__down_btn">&#9660;</button>
-                <button type="button" class="schedule__calendar__inside__up_btn">&#9650;</button>
+                <button type="button" class="schedule__calendar__inside__down_btn" id="hours_downBtn" >&#9660;</button>
+                <button type="button" class="schedule__calendar__inside__up_btn" id="hours_upBtn" >&#9650;</button>
             </div>
-            <button type="button" class="schedule__calendar__right_week_btn">&#9658;</button>
-            <button type="button" class="schedule__calendar__right_month_btn">&#9658;</button>
+            <button type="button" class="schedule__calendar__right_week_btn" id="week_rightBtn">&#9658;</button>
+            <button type="button" class="schedule__calendar__right_month_btn" id="month_rightBtn">&#9658;</button>
         </div>
        
 
@@ -177,10 +201,10 @@
         <div class="schedul__btn ">
             <button type="submit" class="schedul__btn__btn1" >Book Now</button>
             <button type="submit" class="schedul__btn__btn2">Cancel</button>
-          
+            <button type="submit" class="schedul__btn__btn3">Move</button>
         </div>
 
     </div>
-   <script src="./calendar.js"></script>
+   <script src="/js/calendar.js"></script>
 </body>
 </html>

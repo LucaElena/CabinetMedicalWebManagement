@@ -4,14 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/addStaff.css">
-    <title>Add Pacients</title>
+    <!-- <link rel="stylesheet" href="/css/addStaff.css"> -->
+    <link rel="stylesheet" href="/css/PagTest.css">
+    <title>Add Doctor</title>
 </head>
-<body>
+<body class="body">
+    <header>
+        <ul>
+            <li>
+                <a href="#" ><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
+            </li>
+            <li>
+                <a class="header_button" href="/schedules">Schedules</a>
+            </li>
+            <li>
+                <a class="header_button" href="/files">Patients Files</a>
+            </li>
+            <li>
+                <a class="header_button" href="/adduser/patient">Invite Patient</a>
+            </li>
+            <li>
+                <a class="header_button" href="/chat">Chat</a>
+            </li>
+            
+            <li class="login">
+                <a href="/login">Log In</a>
+            </li>
+        </ul>
+    </header>
     <div class="addStaff">
         <div class="addStaff__header"><h1>Add Staff</h1></div>
         <div class="addStaff___photo">
-            <img src="./images/profil_img.jpg" alt="profile photo">
+            <img src="/images/profil_img.jpg" alt="profile photo">
             <button class="btn">+</button>
         </div>
 
@@ -42,8 +66,6 @@
                 
                 
             </form>
-
-        
         </div>
     </div>
 

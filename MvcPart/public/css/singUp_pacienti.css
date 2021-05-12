@@ -60,4 +60,17 @@ body{
  
  }
  
- 
+ @media (max-width :540px) {
+    .Singup {
+        border-radius: 5px;
+        background-color: #f1f1f1;
+        padding: 40px;
+        transform: translate(-50%, 15%);
+        left: 50%;
+        bottom: 40px;
+        width: 14em;
+        height: 30em;
+        position: relative;
+        text-align: center;
+    }
+}

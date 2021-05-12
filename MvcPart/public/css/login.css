@@ -62,3 +62,17 @@ button:hover {
     display: block;
 
 }
+@media (max-width :540px) {
+    .LogIn {
+        border-radius: 5px;
+        background-color: #f1f1f1;
+        padding: 40px;
+        transform: translate(-50%, 30%);
+        left: 50%;
+        bottom: 50px;
+        width: 200px;
+        position: relative;
+        text-align: center;
+    }
+
+}
