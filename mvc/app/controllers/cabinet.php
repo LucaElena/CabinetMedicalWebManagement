@@ -1,8 +1,7 @@
 <?php
-	class Home extends Controller
+	class Cabinet extends Controller
 	{
-		
-		
+
 		public function index($cabinetId = '')
 		{
 			// echo 'home/index: ' . $param . ' ' . $other_param;
@@ -19,10 +18,6 @@
             }
             
 
-		}
-		public function test()
-		{
-			echo 'test';
 		}
 		
 
