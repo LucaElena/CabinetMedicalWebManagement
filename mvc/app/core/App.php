@@ -7,7 +7,8 @@
 	class App
 	{
 
-		protected $controller = 'login';
+		#protected $controller = 'login';
+		protected $controller = 'cabinet'; # temporar nu punem partea de logare. Facem intai functionalitatile
 		protected $method = 'index';
 		protected $params = [];
 		

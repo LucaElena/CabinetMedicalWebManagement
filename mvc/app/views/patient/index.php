@@ -17,16 +17,13 @@
                 <a href="#" ><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
             </li>
             <li>
-                <a class="header_button" href="/programari">Programari</a>
+                <a class="header_button" href="/schedules">Schedules</a>
             </li>
             <li>
-                <a class="header_button" href="/fisiere">Fisiere</a>
+                <a class="header_button" href="/files">Files</a>
             </li>
             <li>
-                <a class="header_button" href="/addpatient/client">Add Client</a>
-            </li>
-            <li>
-                <a class="header_button" href="/addpatient/doctor">Add Doctor</a>
+                <a class="header_button" href="/chat">Chat</a>
             </li>
             <li class="login">
                 <a href="/login">Log In</a>
@@ -34,7 +31,7 @@
         </ul>
     </header>
     <main>
-        <p>Cabinet index: <?=$data['id']?></p>
+        <p>Patient index: <?=$data['id']?></p>
     </main>
     <footer>
         <p>About us. </p>

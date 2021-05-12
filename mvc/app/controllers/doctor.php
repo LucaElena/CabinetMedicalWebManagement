@@ -16,11 +16,8 @@
             {
                 $this->view('doctor/index' , ['id' => $doctor->id]);
             }
-            
 
 		}
-		
-
 	}
 
 ?>

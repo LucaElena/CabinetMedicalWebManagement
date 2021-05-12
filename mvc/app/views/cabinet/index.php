@@ -17,16 +17,19 @@
                 <a href="#" ><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
             </li>
             <li>
-                <a class="header_button" href="/programari">Programari</a>
+                <a class="header_button" href="/schedules">Schedules</a>
             </li>
             <li>
-                <a class="header_button" href="/fisiere">Fisiere</a>
+                <a class="header_button" href="/files">Patients Files</a>
             </li>
             <li>
-                <a class="header_button" href="/addpatient/client">Add Client</a>
+                <a class="header_button" href="/adduser/patient">Invite Patient</a>
             </li>
             <li>
-                <a class="header_button" href="/addpatient/doctor">Add Doctor</a>
+                <a class="header_button" href="/adduser/doctor">Invite Doctor</a>
+            </li>
+            <li>
+                <a class="header_button" href="/chat">Chat</a>
             </li>
             <li class="login">
                 <a href="/login">Log In</a>
