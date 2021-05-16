@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2021 at 10:29 PM
+-- Generation Time: May 16, 2021 at 11:04 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -24,10 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cabinet`
+-- Table structure for table `appointments`
 --
 
-CREATE TABLE `cabinet` (
+CREATE TABLE `appointments` (
+  `id_patient` int(11) NOT NULL,
+  `id_doctor` int(11) NOT NULL,
+  `id_cabinet` int(11) NOT NULL,
+  `year` int(4) NOT NULL,
+  `month` int(2) NOT NULL,
+  `day` int(2) NOT NULL,
+  `hour` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cabinets`
+--
+
+CREATE TABLE `cabinets` (
   `id_cabinet` int(11) NOT NULL,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -35,10 +51,24 @@ CREATE TABLE `cabinet` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `doctor`
+-- Table structure for table `chats`
 --
 
-CREATE TABLE `doctor` (
+CREATE TABLE `chats` (
+  `id_chat` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `id_patient` int(11) NOT NULL,
+  `id_doctor` int(11) NOT NULL,
+  `message` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `doctors`
+--
+
+CREATE TABLE `doctors` (
   `id_doctor` int(11) NOT NULL,
   `first_name` varchar(30) NOT NULL,
   `last_name` varchar(30) NOT NULL,
@@ -48,14 +78,50 @@ CREATE TABLE `doctor` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `patient`
+-- Table structure for table `employees`
 --
 
-CREATE TABLE `patient` (
+CREATE TABLE `employees` (
+  `id_doctor` int(11) NOT NULL,
+  `id_cabinet` int(11) NOT NULL,
+  `id_schedule` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `files`
+--
+
+CREATE TABLE `files` (
+  `id_file` int(11) NOT NULL,
+  `id_cabinet` int(11) NOT NULL,
+  `id_patient` int(11) NOT NULL,
+  `id_doctor` int(11) NOT NULL,
+  `id_data` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patients`
+--
+
+CREATE TABLE `patients` (
   `id_patient` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `first_name` varchar(30) NOT NULL,
   `last_name` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `schedules`
+--
+
+CREATE TABLE `schedules` (
+  `id_schedule` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -77,23 +143,23 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexes for table `cabinet`
+-- Indexes for table `cabinets`
 --
-ALTER TABLE `cabinet`
+ALTER TABLE `cabinets`
   ADD PRIMARY KEY (`id_cabinet`),
   ADD UNIQUE KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `doctor`
+-- Indexes for table `doctors`
 --
-ALTER TABLE `doctor`
+ALTER TABLE `doctors`
   ADD PRIMARY KEY (`id_doctor`),
   ADD UNIQUE KEY `user_id` (`id_user`);
 
 --
--- Indexes for table `patient`
+-- Indexes for table `patients`
 --
-ALTER TABLE `patient`
+ALTER TABLE `patients`
   ADD PRIMARY KEY (`id_patient`),
   ADD UNIQUE KEY `id_user` (`id_user`);
 
@@ -111,21 +177,21 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `cabinet`
+-- AUTO_INCREMENT for table `cabinets`
 --
-ALTER TABLE `cabinet`
+ALTER TABLE `cabinets`
   MODIFY `id_cabinet` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `doctor`
+-- AUTO_INCREMENT for table `doctors`
 --
-ALTER TABLE `doctor`
+ALTER TABLE `doctors`
   MODIFY `id_doctor` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `patient`
+-- AUTO_INCREMENT for table `patients`
 --
-ALTER TABLE `patient`
+ALTER TABLE `patients`
   MODIFY `id_patient` int(11) NOT NULL AUTO_INCREMENT;
 
 --
