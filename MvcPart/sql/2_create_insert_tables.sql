@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2021 at 10:49 PM
+-- Generation Time: May 19, 2021 at 11:06 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -133,6 +133,35 @@ CREATE TABLE `employees` (
   `id_cabinet` int(11) NOT NULL,
   `id_schedule` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `employees`
+--
+
+INSERT INTO `employees` (`id_doctor`, `id_cabinet`, `id_schedule`) VALUES
+(3, 1, 1),
+(4, 1, 2),
+(8, 1, 3),
+(9, 1, 4),
+(10, 1, 5),
+(11, 1, 6),
+(12, 1, 7),
+(18, 1, 8),
+(19, 1, 9),
+(23, 1, 10),
+(24, 1, 11),
+(0, 0, 0),
+(25, 1, 12),
+(26, 1, 13),
+(27, 1, 14),
+(28, 1, 15),
+(29, 1, 16),
+(0, 0, 0),
+(30, 2, 17),
+(31, 2, 18),
+(32, 2, 19),
+(28, 2, 20),
+(29, 2, 21);
 
 -- --------------------------------------------------------
 

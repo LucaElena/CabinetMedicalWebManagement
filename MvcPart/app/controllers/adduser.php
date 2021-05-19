@@ -19,7 +19,6 @@
 
 			$this->view('adduser/doctor' , ['patientType' => $adduser->userType]);
             
-
 		}
 		
 
