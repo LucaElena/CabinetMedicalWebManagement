@@ -4,19 +4,26 @@
 
 		public function index($cabinetId = '')
 		{
-			// echo 'home/index: ' . $param . ' ' . $other_param;
+			
 			$cabinet = $this->model('CabinetModel');
-			$cabinet->id = $cabinetId; 
 
-			if(!$cabinet->id)
+			if($cabinetId)
             {
-			    $this->view('cabinet/not-found' , ['id' => null]);
+				$cabinet_exist = $cabinet->isDefined($cabinetId);
+				if ($cabinet_exist)
+				{
+					$this->view('cabinet/index',  ['id' => $cabinetId]);
+					// $result = $cabinet->getData($cabinetId);
+				}
+				else
+				{
+					$this->view('errors/404',  ['id' => $cabinetId]);
+				}
             }
             else
             {
-                $this->view('cabinet/index' , ['id' => $cabinet->id]);
+                $this->view('errors/403',  ['id' => $cabinetId]);
             }
-            
 
 		}
 		
