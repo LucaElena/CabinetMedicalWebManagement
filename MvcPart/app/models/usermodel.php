@@ -2,9 +2,9 @@
 
 class UserModel extends Controller
 {
-    public  $id;
-    public  $type;
-    public  $user_name;
+    public  $id = '';
+    public  $type = '';
+    public  $user_name = '';
     
     // check if user exist in db
     public function isDefined($user_name)
@@ -45,9 +45,10 @@ class UserModel extends Controller
         $query_isType->execute();
         $result = $query_isType->fetch(PDO::FETCH_ASSOC);
         $typeCount = $result['COUNT(id_user)'];
-        if($typeCount > 0)
-            $this->type = $type;
-            $this->id = $idUser;
+        print_r($typeCount);
+        if($typeCount >= 1)
+            // $this->type = $type;
+            // $this->id = $idUser;
             return true;
         return false;
     }
@@ -61,6 +62,7 @@ class UserModel extends Controller
         $id_user = $result['id_user'];
         $this->id =  $id_user;
         $this->user_name = $username;
+        print_r($id_user);
         return $id_user;
     }
 
@@ -69,25 +71,24 @@ class UserModel extends Controller
     {
         
         $id_user = $this->getUserId($username);
+        $this->type = '';
         if($id_user)
         {
             if($this->checkType("cabinets" , $id_user))
             {
                 $this->type = "cabinet";
-                return "cabinet";
             }
             if($this->checkType("doctors" , $id_user))
             {
                 $this->type = "doctor";
-                return "doctor";
             }
             if($this->checkType("patients" , $id_user))
             {
                 $this->type = "patient";
-                return "patient";
             }
         }
-        return "";
+        print_r($this->type);
+        return $this->type;
     }
 
 

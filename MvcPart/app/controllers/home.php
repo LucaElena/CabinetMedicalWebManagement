@@ -14,7 +14,7 @@
                   // $userId = "cabinet_ana";
 
                   $user = $this->model('UserModel');
-                  print_r("Home index ", $userName);
+                  // print_r("Home index ", $userName);
                   if($userName)
                   {
                         $user_exist = $user->isDefined($userName);

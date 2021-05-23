@@ -11,47 +11,28 @@
 <body>
     <header>
         <ul>
-            <li>
-                <a href="/cabinet/<?=$data['username']?>" ><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
-            </li>
-            <li>
-                <a class="header_button" href="/schedules/<?=$data['username']?>">Schedules</a>
-            </li>
-            <li>
-                <a class="header_button" href="/files/<?=$data['username']?>">Patients Files</a>
-            </li>
-            <li>
-                <a class="header_button" href="/adduser/<?=$data['username']?>">Invite Patient</a>
-            </li>
-            <li>
-                <a class="header_button" href="/chat/<?=$data['username']?>">Chat</a>
-            </li>
-            
-            <li class="login">
-                <a href="/login">Log In</a>
-            </li>
+            <?=$data['generalbar']?>    
         </ul>
     </header>
-    <div class="schedul">
-        <div class="schedul__header"><h3>Book Appointment</h3></div>
-        
-        <div class="schedul__details">
-       
+        <div class="schedul">
+            <div class="schedul__header"><h3>Book Appointment</h3></div>
+            <div class="schedul__details">
+
             <!-- <label class="schedul__details__label1" >Department</label> -->
             <select class=" schedul__details__section" >
                 <option value="Department"> Department </option>
                 <?=$data['departments']?>
             </select>
-           
-           
-        
+
+
+
             <!-- <label class="schedul__details__label2" >Doctor</label> -->
             <select class=" schedul__details__doctors" >
                 <option value="Doctor"> Doctor </option>
                 <?=$data['doctors']?>
             </select>
-       
-          
+
+
         </div>
 
 

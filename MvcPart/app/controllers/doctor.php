@@ -5,28 +5,52 @@
 		public function index($doctorUserName = '')
 		{
 			
-			$doctor = $this->model('DoctorModel');
+			$user = $this->model('userModel');
+			$info['username'] =  $doctorUserName;
+			$info['type'] = 'doctor';
+			$info['generalbar'] = '
+				<li>
+				<a href="/doctor/' . $doctorUserName . '"><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
+				</li>
+				<li>
+					<a class="header_button" href="/schedules/' . $doctorUserName . '">Schedules</a>
+				</li>
+				<li>
+					<a class="header_button" href="/files/' . $doctorUserName . '">Patients Files</a>
+				</li>
+				<li>
+					<a class="header_button" href="/adduser/patient/' . $doctorUserName . '">Invite Patient</a>
+				</li>
+				<li>
+					<a class="header_button" href="/adduser/doctor/' . $doctorUserName . '">Invite Doctor</a>
+				</li>
+				<li>
+					<a class="header_button" href="/chat/' . $doctorUserName . '">Chat</a>
+				</li>
+				<li class="login">
+					<a href="/login">Log In</a>
+				</li>
+				';
+
 
 			if($doctorUserName)
             {
-				$doctor_exist = $doctor->isDefined($doctorUserName);
+				$doctor_exist = $user->isDefined($doctorUserName);
 
 				if ($doctor_exist)
 				{
-					$this->view('doctor/index',  ['username' => $doctorUserName]);
+					$this->view('user/index',  $info);
 					// $result = $cabinet->getData($cabinetId);
 				}
 				else
 				{
-					// $this->view('errors/404',  ['username' => $doctorUserName]);
-					header('Location: ' . URL . 'errors/error404' , "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+					header('Location: ' . URL . 'errors/error403' , $_SERVER['REQUEST_URI']);
 				}
             }
             else
-            {
-                // $this->view('errors/403',  ['username' => $doctorUserName]);
-				header('Location: ' . URL . 'errors/error403' , "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
-            }
+			{
+				header('Location: ' . URL . 'errors/error403' , $_SERVER['REQUEST_URI']);
+			}
 
 		}
 		

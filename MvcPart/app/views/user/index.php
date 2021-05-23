@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,17 +12,11 @@
 <body>
     <header>
         <ul>
-            <li>
-                <a href="#" ><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
-            </li>
-
-            <li class="login">
-                <a href="/login">Log In</a>
-            </li>
+            <?=$data['generalbar']?>
         </ul>
     </header>
     <main>
-        <p>Patient not found -> Log in first</p>
+        <p><?=$data['type']?> username: <?=$data['username']?></p>
     </main>
     <footer>
         <p>About us. </p>
