@@ -118,17 +118,65 @@ class UserModel extends Controller
         $doctors = array();
         if($id_user)
         {
-            // SELECT first_name,last_name,department FROM doctors as d INNER JOIN employees as e WHERE d.id_user = e.id_doctor AND e.id_cabinet = 1;
-            // print_r($username . $id_user);
-            $sql_getDoctors = "SELECT first_name,last_name,department FROM doctors as d INNER JOIN employees as e WHERE d.id_user = e.id_doctor AND e.id_cabinet = ".$id_user;
-            $query_getDoctors = $this->conn->prepare($sql_getDoctors);
-            $query_getDoctors->execute();
-            while($doctor = $query_getDoctors->fetch(PDO::FETCH_ASSOC))
+            if(isCabinet($username))
             {
-                array_push($doctors, $doctor);
-            }
+            
+                $sql_getDoctors = "SELECT first_name,last_name,department FROM doctors as d INNER JOIN employees as e WHERE d.id_user = e.id_doctor AND e.id_cabinet = ".$id_user;
+                $query_getDoctors = $this->conn->prepare($sql_getDoctors);
+                $query_getDoctors->execute();
+                while($doctor = $query_getDoctors->fetch(PDO::FETCH_ASSOC))
+                {
+                    array_push($doctors, $doctor);
+                }
+            }   
         }
         return $doctors;
+    }
+
+    public function isCabinet($username)
+    {
+
+        $id_user = $this->getUserId($username);
+
+        $sql_isCabinet = "SELECT COUNT(id_user) FROM cabinets WHERE id_user = " . $id_user;
+        $query_isCabinet = $this->conn->prepare($sql_isCabinet);
+        $query_isCabinet->execute();
+        $result = $query_isCabinet->fetch(PDO::FETCH_ASSOC);
+        $cabinetCount = $result['COUNT(id_user)'];
+
+        if($cabinetCount >= 1)
+            return true;
+        return false;
+    }
+    public function isDoctor($username)
+    {
+
+        $id_user = $this->getUserId($username);
+
+        $sql_isDoctor = "SELECT COUNT(id_user) FROM doctors WHERE id_user = " . $id_user;
+        $query_isDoctor = $this->conn->prepare($sql_isDoctor);
+        $query_isDoctor->execute();
+        $result = $query_isDoctor->fetch(PDO::FETCH_ASSOC);
+        $doctorCount = $result['COUNT(id_user)'];
+
+        if($doctorCount >= 1)
+            return true;
+        return false;
+    }
+    public function isPatient($username)
+    {
+
+        $id_user = $this->getUserId($username);
+
+        $sql_isPatient = "SELECT COUNT(id_user) FROM patient WHERE id_user = " . $id_user;
+        $query_isPatient = $this->conn->prepare($sql_isPatient);
+        $query_isPatient->execute();
+        $result = $query_isPatient->fetch(PDO::FETCH_ASSOC);
+        $patientCount = $result['COUNT(id_user)'];
+
+        if($patientCount >= 1)
+            return true;
+        return false;
     }
 
     

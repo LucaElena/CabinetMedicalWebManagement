@@ -5,7 +5,7 @@
 		public function index($cabinetUserName = '')
 		{
 			
-			$cabinet = $this->model('CabinetModel');
+			$user = $this->model('userModel');
 			$info['username'] =  $cabinetUserName;
 			$info['type'] = 'cabinet';
 			$info['generalbar'] = '
@@ -36,10 +36,10 @@
 
  			if($cabinetUserName)
             {
-				$user_exist = $cabinet->isDefined($cabinetUserName);
+				$user_exist = $user->isDefined($cabinetUserName);
 				if ($user_exist)
 				{
-					$cabinet_exist = $cabinet->isCabinet($cabinetUserName);
+					$cabinet_exist = $user->isCabinet($cabinetUserName);
 					if ($cabinet_exist)
 					{
 						$this->view('user/index', $info);
