@@ -2,8 +2,9 @@
 
 class UserModel extends Controller
 {
-    public $id;
-    public $type;
+    public  $id;
+    public  $type;
+    public  $user_name;
     
     // check if user exist in db
     public function isDefined($user_name)
@@ -33,28 +34,22 @@ class UserModel extends Controller
         $query = $this->conn->prepare($sql);
         $query->execute(array(":username" => $username));
         $results = $query->fetch(PDO::FETCH_ASSOC);
-        // print_r("<br>Suntem in UserModel getData and results:");
-        // print_r($results);
         return $results;
     }
 
     public function checkType($type , $idUser)
     {
         $sql_isType = "SELECT COUNT(id_user) FROM " . $type . " WHERE id_user = " . $idUser;
-        // print_r("<br>checkType  " . $type);
-    
         $query_isType = $this->conn->prepare($sql_isType);
         $query_isType->execute();
         $result = $query_isType->fetch(PDO::FETCH_ASSOC);
         $typeCount = $result['COUNT(id_user)'];
-        // print_r($typeCount);
         if($typeCount > 0)
             return true;
         return false;
     }
 
-    // Based on a user id we return the type (cabinet/doctor/patient)
-    public function getUserType($username)
+    public function getUserId($username)
     {
         $sql_getId= "SELECT id_user FROM users WHERE user_name = :username";
         $query_getId = $this->conn->prepare($sql_getId);
@@ -62,6 +57,15 @@ class UserModel extends Controller
         $result = $query_getId->fetch(PDO::FETCH_ASSOC);
         $id_user = $result['id_user'];
         $this->id =  $id_user;
+        return $id_user;
+    }
+
+    // Based on a user id we return the type (cabinet/doctor/patient)
+    public function getUserType($username)
+    {
+        
+        $id_user = $this->getUserId($username);
+        $this->id = $id_user;
         if($id_user)
         {
             if($this->checkType("cabinets" , $id_user))

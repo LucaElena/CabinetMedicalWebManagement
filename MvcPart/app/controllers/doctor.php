@@ -2,23 +2,34 @@
 	class Doctor extends Controller
 	{
 
-		public function index($doctorId = '')
+		public function index($doctorUserName = '')
 		{
-			// echo 'home/index: ' . $param . ' ' . $other_param;
+			
 			$doctor = $this->model('DoctorModel');
-			$doctor->id = $doctorId; 
 
-			if(!$doctor->id)
+			if($doctorUserName)
             {
-			    $this->view('doctor/not-found' , ['id' => null]);
+				$doctor_exist = $doctor->isDefined($doctorUserName);
+
+				if ($doctor_exist)
+				{
+					$this->view('doctor/index',  ['username' => $doctorUserName]);
+					// $result = $cabinet->getData($cabinetId);
+				}
+				else
+				{
+					// $this->view('errors/404',  ['username' => $doctorUserName]);
+					header('Location: ' . URL . 'errors/error404' , "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+				}
             }
             else
             {
-                $this->view('doctor/index' , ['id' => $doctor->id]);
+                // $this->view('errors/403',  ['username' => $doctorUserName]);
+				header('Location: ' . URL . 'errors/error403' , "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
             }
 
-
 		}
+		
 	}
 
 ?>

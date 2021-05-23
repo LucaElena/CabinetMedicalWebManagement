@@ -35,7 +35,7 @@
         </ul>
     </header>
     <main>
-        <p>Doctor index: <?=$data['id']?></p>
+        <p>Doctor username: <?=$data['username']?></p>
     </main>
     <footer>
         <p>About us. </p>

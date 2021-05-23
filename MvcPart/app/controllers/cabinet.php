@@ -2,28 +2,35 @@
 	class Cabinet extends Controller
 	{
 
-		public function index($cabinetId = '')
+		public function index($cabinetUserName = '')
 		{
 			
 			$cabinet = $this->model('CabinetModel');
 
-			if($cabinetId)
+			if($cabinetUserName)
             {
-				$cabinet_exist = $cabinet->isDefined($cabinetId);
-				if ($cabinet_exist)
+				$user_exist = $cabinet->isDefined($cabinetUserName);
+				if ($user_exist)
 				{
-					$this->view('cabinet/index',  ['id' => $cabinetId]);
-					// $result = $cabinet->getData($cabinetId);
+					$cabinet_exist = $cabinet->isCabinet($cabinetUserName);
+					if ($cabinet_exist)
+					{
+						$this->view('cabinet/index',  ['username' => $cabinetUserName]);
+					}
+					else
+					{
+						header('Location: ' . URL . 'errors/error403' , $_SERVER['HTTP_REFERER']);
+					}
 				}
 				else
 				{
-					$this->view('errors/404',  ['id' => $cabinetId]);
+					header('Location: ' . URL . 'errors/error403' , $_SERVER['HTTP_REFERER']);
 				}
             }
-            else
-            {
-                $this->view('errors/403',  ['id' => $cabinetId]);
-            }
+			else
+			{
+				header('Location: ' . URL . 'errors/error403' , $_SERVER['HTTP_REFERER']);
+			}
 
 		}
 		

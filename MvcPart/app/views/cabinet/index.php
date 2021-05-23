@@ -17,7 +17,7 @@
                 <a href="#" ><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
             </li>
             <li>
-                <a class="header_button" href="/schedules">Schedules</a>
+                <a class="header_button" href="/schedulescabinet">Schedules</a>
             </li>
             <li>
                 <a class="header_button" href="/files">Patients Files</a>
@@ -37,7 +37,7 @@
         </ul>
     </header>
     <main>
-        <p>Cabinet index: <?=$data['id']?></p>
+        <p>Cabinet username: <?=$data['username']?></p>
     </main>
     <footer>
         <p>About us. </p>

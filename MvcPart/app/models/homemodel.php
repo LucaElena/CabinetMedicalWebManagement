@@ -2,7 +2,9 @@
 
 class HomeModel extends Controller
 {
-    public $id;
+    public  $id;
+    public  $type;
+    public  $user_name;
     
     
 }

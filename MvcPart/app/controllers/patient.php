@@ -2,19 +2,18 @@
 	class Patient extends Controller
 	{
 
-		public function index($patientId = '')
+		public function index($patientUserName = '')
 		{
 			// echo 'home/index: ' . $param . ' ' . $other_param;
 			$patient = $this->model('patientModel');
-			$patient->id = $patientId; 
 
-			if(!$patient->id)
+			if(!$patientUserName)
             {
-			    $this->view('patient/not-found' , ['id' => null]);
+			    header('Location: ' . URL . 'errors/error403' . "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
             }
             else
             {
-                $this->view('patient/index' , ['id' => $patient->id]);
+                $this->view('patient/index' , ['username' => $patientUserName]);
             }
 
 		}

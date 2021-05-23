@@ -2,7 +2,9 @@
 
 class AddUserModel extends Controller
 {
-    public $userType;
+    public  $id;
+    public  $type;
+    public  $user_name;
     
 }
 // print_r("Suntem in CabinetModel");
