@@ -14,22 +14,22 @@
     <header>
         <ul>
             <li>
-                <a href="#" ><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
+                <a href="/cabinet/<?=$data['username']?>"><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
             </li>
             <li>
-                <a class="header_button" href="/schedulescabinet">Schedules</a>
+                <a class="header_button" href="/schedules/<?=$data['username']?>">Schedules</a>
             </li>
             <li>
-                <a class="header_button" href="/files">Patients Files</a>
+                <a class="header_button" href="/files/<?=$data['username']?>">Patients Files</a>
             </li>
             <li>
-                <a class="header_button" href="/adduser/patient">Invite Patient</a>
+                <a class="header_button" href="/adduser/patient/<?=$data['username']?>">Invite Patient</a>
             </li>
             <li>
-                <a class="header_button" href="/adduser/doctor">Invite Doctor</a>
+                <a class="header_button" href="/adduser/doctor/<?=$data['username']?>">Invite Doctor</a>
             </li>
             <li>
-                <a class="header_button" href="/chat">Chat</a>
+                <a class="header_button" href="/chat/<?=$data['username']?>">Chat</a>
             </li>
             <li class="login">
                 <a href="/login">Log In</a>

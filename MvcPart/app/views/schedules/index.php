@@ -12,19 +12,19 @@
     <header>
         <ul>
             <li>
-                <a href="#" ><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
+                <a href="/cabinet/<?=$data['username']?>" ><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
             </li>
             <li>
-                <a class="header_button" href="/schedules">Schedules</a>
+                <a class="header_button" href="/schedules/<?=$data['username']?>">Schedules</a>
             </li>
             <li>
-                <a class="header_button" href="/files">Patients Files</a>
+                <a class="header_button" href="/files/<?=$data['username']?>">Patients Files</a>
             </li>
             <li>
-                <a class="header_button" href="/adduser/patient">Invite Patient</a>
+                <a class="header_button" href="/adduser/<?=$data['username']?>">Invite Patient</a>
             </li>
             <li>
-                <a class="header_button" href="/chat">Chat</a>
+                <a class="header_button" href="/chat/<?=$data['username']?>">Chat</a>
             </li>
             
             <li class="login">
@@ -37,36 +37,18 @@
         
         <div class="schedul__details">
        
-                   <!-- <label class="schedul__details__label1" >Department</label> -->
-                   <select class=" schedul__details__section" >
-                    <option value="Pediatrics"> Department </option>
-                    <option value="Pediatrics"> Pediatrics </option>
-                    <option value = "Family Medicine"> Family Medicine</option>
-                    <option value ="Cardiology"> Cardiology </option>
-                    <option value ="Allergy"> Allergy </option>
-                    <option value ="General surgery"> ResuGeneral surgerylts </option>
-                    <option value="Dermatology"> Dermatology </option>
-                    <option value = "Endocrinology">Endocrinology</option>
-                    <option value ="Gastroenterology"> Gastroenterology </option>
-                    <option value ="Neurology"> Neurology </option>
-                    <option value ="Ophthalmology"> Ophthalmology </option>
-                </select>
+            <!-- <label class="schedul__details__label1" >Department</label> -->
+            <select class=" schedul__details__section" >
+                <option value="Department"> Department </option>
+                <?=$data['departments']?>
+            </select>
            
            
         
-              <!-- <label class="schedul__details__label2" >Doctor</label> -->
-              <select class=" schedul__details__doctors" >
-                <option value="DoctorA"> Doctor </option>
-                <option value="DoctorA"> Popescu Ion </option>
-                <option value = "DoctorB">DoctorsB</option>
-                <option value ="DoctorC"> DoctorsC </option>
-                <option value ="DoctorD"> DoctorsC </option>
-                <option value ="DoctorE"> DoctorE </option>
-                <option value="DoctorF"> DoctorF </option>
-                <option value = "DoctorG">DoctorG</option>
-                <option value ="DoctorH"> DoctorH </option>
-                <option value ="DoctorI"> DoctorI </option>
-                <option value ="DoctorM"> DoctorM </option>
+            <!-- <label class="schedul__details__label2" >Doctor</label> -->
+            <select class=" schedul__details__doctors" >
+                <option value="Doctor"> Doctor </option>
+                <?=$data['doctors']?>
             </select>
        
           

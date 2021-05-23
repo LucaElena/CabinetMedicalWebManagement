@@ -18,6 +18,7 @@
                   if($userName)
                   {
                         $user_exist = $user->isDefined($userName);
+                        $this->user_name = $userName;
                         if ($user_exist)
                         {
                               $user_type = $user->getUserType($userName);
@@ -25,17 +26,20 @@
                               {
                                     case "cabinet":
                                           // $this->view('cabinet/index' ,  ['id' => $userName]);
+                                          $this->type = "cabinet";
                                           header('Location: ' . URL . 'cabinet/'. $userName);
                                           break;
                                     case "doctor":
                                           // $this->view('doctor/index' ,  ['username' => $userName]);
+                                          $this->type = "doctor";
                                           header('Location: ' . URL . 'doctor/'. $userName);
                                           break;
                                     case "patient":
                                           // $this->view('patient/index' ,  ['username' => $userName]);
+                                          $this->type = "patient";
                                           header('Location: ' . URL . 'patient/'. $userName);
                                           break;
-                                    }
+                              }
                         }
                         else
                         {

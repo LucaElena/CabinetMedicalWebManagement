@@ -6,6 +6,11 @@ class CabinetModel extends Controller
     public  $type;
     public  $user_name;
     //SELECT * from users as u INNER JOIN cabinets as c ON u.id_user=c.id_user;
+
+    // function __construct()
+    // {
+
+    // }
     
     public function isDefined($username)
     {
