@@ -12,21 +12,7 @@
 
     <header>
         <ul>
-            <li>
-                <a href="#" ><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
-            </li>
-            <li>
-                <a class="header_button" href="/schedules">Schedules</a>
-            </li>
-            <li>
-                <a class="header_button" href="/files">Files</a>
-            </li>
-            <li>
-                <a class="header_button" href="/chat">Chat</a>
-            </li>
-            <li class="login">
-                <a href="/login">Log In</a>
-            </li>
+            <?=$data['generalbar']?>
         </ul>
     </header>
 

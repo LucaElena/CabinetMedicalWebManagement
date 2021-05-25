@@ -8,6 +8,7 @@
 			$user = $this->model('userModel');
 			$info['username'] =  $cabinetUserName;
 			$info['type'] = 'cabinet';
+			//TO DO : diferent general bar for different users types:
 			$info['generalbar'] = '
 				<li>
 				<a href="/cabinet/' . $cabinetUserName . '"><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>

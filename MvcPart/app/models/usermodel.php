@@ -92,47 +92,7 @@ class UserModel extends Controller
     }
 
 
-    #Only for cabinets 
-    public function getDepartments($username)
-    {
-        $id_user = $this->getUserId($username);
-        $departments = array();
-        if($id_user)
-        {
-            // SELECT DISTINCT department FROM doctors as d INNER JOIN employees as e WHERE d.id_user = e.id_doctor AND e.id_cabinet = 1;
-            // print_r($username . $id_user);
-            $sql_getDepartments = "SELECT DISTINCT department FROM doctors as d INNER JOIN employees as e WHERE d.id_user = e.id_doctor AND e.id_cabinet =".$id_user;
-            $query_getDepartments = $this->conn->prepare($sql_getDepartments);
-            $query_getDepartments->execute();
-            while($departament = $query_getDepartments->fetch(PDO::FETCH_ASSOC))
-            {
-                array_push($departments, $departament['department']);
-            }
-        }
-        return $departments;
-    }
-    #Only for cabinets 
-    public function getDoctors($username)
-    {
-        $id_user = $this->getUserId($username);
-        $doctors = array();
-        if($id_user)
-        {
-            if(isCabinet($username))
-            {
-            
-                $sql_getDoctors = "SELECT first_name,last_name,department FROM doctors as d INNER JOIN employees as e WHERE d.id_user = e.id_doctor AND e.id_cabinet = ".$id_user;
-                $query_getDoctors = $this->conn->prepare($sql_getDoctors);
-                $query_getDoctors->execute();
-                while($doctor = $query_getDoctors->fetch(PDO::FETCH_ASSOC))
-                {
-                    array_push($doctors, $doctor);
-                }
-            }   
-        }
-        return $doctors;
-    }
-
+   
     public function isCabinet($username)
     {
 
@@ -148,6 +108,7 @@ class UserModel extends Controller
             return true;
         return false;
     }
+
     public function isDoctor($username)
     {
 
@@ -178,6 +139,52 @@ class UserModel extends Controller
             return true;
         return false;
     }
+
+    #Only for cabinets 
+    public function getDoctors($username)
+    {
+        $id_user = $this->getUserId($username);
+        $doctors = array();
+        if($id_user)
+        {
+            if($this->isCabinet($username))
+            {
+            
+                $sql_getDoctors = "SELECT first_name,last_name,department FROM doctors as d INNER JOIN employees as e WHERE d.id_user = e.id_doctor AND e.id_cabinet = ".$id_user;
+                $query_getDoctors = $this->conn->prepare($sql_getDoctors);
+                $query_getDoctors->execute();
+                while($doctor = $query_getDoctors->fetch(PDO::FETCH_ASSOC))
+                {
+                    array_push($doctors, $doctor);
+                }
+            }   
+        }
+        return $doctors;
+    }
+     #Only for cabinets 
+     public function getDepartments($username)
+     {
+         $id_user = $this->getUserId($username);
+         $departments = array();
+         if($id_user)
+         {
+            if($this->isCabinet($username))
+            { 
+            // SELECT DISTINCT department FROM doctors as d INNER JOIN employees as e WHERE d.id_user = e.id_doctor AND e.id_cabinet = 1;
+                // print_r($username . $id_user);
+                $sql_getDepartments = "SELECT DISTINCT department FROM doctors as d INNER JOIN employees as e WHERE d.id_user = e.id_doctor AND e.id_cabinet =".$id_user;
+                $query_getDepartments = $this->conn->prepare($sql_getDepartments);
+                $query_getDepartments->execute();
+                while($departament = $query_getDepartments->fetch(PDO::FETCH_ASSOC))
+                {
+                    array_push($departments, $departament['department']);
+                }
+            }
+         }
+         return $departments;
+     }
+
+
 
     
 }
