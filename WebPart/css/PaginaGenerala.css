@@ -19,7 +19,6 @@ header{
 header li{
     display: inline;/*toate butoanele in linie */
     padding-left: 45px;
-
 }
 
 
@@ -53,8 +52,7 @@ header ul .login a{
     transition:.3s ease;
     padding: 13px;
     top: -15px;
-    
-  
+
 }
 
 
