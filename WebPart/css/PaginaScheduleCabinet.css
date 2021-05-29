@@ -156,8 +156,9 @@ footer
   grid-row-start: 3;
   grid-row-end: 4;
   position: relative;
-  /* margin:2em 0.5em ; */
-  }
+  padding-left: 20%;
+  padding-right: 20%;
+}
 
 
 .schedul .schedul__btn 
@@ -248,8 +249,7 @@ background-color: white;
     cursor: pointer;
     text-decoration: none;
     transition:.3s ease;
-    font-family:Arial;
-      
+    font-family:Arial;  
 }
 .schedul__btn__btn2{
   background-color: red;
@@ -540,6 +540,19 @@ width: 100%;
     {
       letter-spacing: 0em;
     }
+
+    .schedul__btn .schedul__btn__btn1, .schedul__btn__btn2, .schedul__btn__btn3
+    {
+    
+      padding: 0em;
+      margin: 0em;
+      width: 6em;
+    }
+    .schedul__data 
+    {
+      padding: 0%;
+    }
+
 }
 
 
