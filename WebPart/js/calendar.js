@@ -13,19 +13,36 @@ var week_names = [ 'Monday' , 'Tuesday' , 'Wednesday' , 'Thursday' , 'Friday' , 
 
 let monthLeftBtn = document.getElementById("month_leftBtn");
 let monthRightBtn = document.getElementById("month_rightBtn");
-monthLeftBtn.addEventListener("click", function() {change_curent_month(-1)});
-monthRightBtn.addEventListener("click",  function() {change_curent_month(1)});
+if(monthLeftBtn && monthRightBtn)
+{
+    monthLeftBtn.addEventListener("click", function() {change_curent_month(-1)});
+    monthRightBtn.addEventListener("click",  function() {change_curent_month(1)});
+}
 
 let weekLeftBtn = document.getElementById("week_leftBtn");
 let weekRightBtn = document.getElementById("week_rightBtn");
-weekLeftBtn.addEventListener("click", function() {change_curent_week(-1)});
-weekRightBtn.addEventListener("click",  function() {change_curent_week(1)});
+if(weekLeftBtn || weekRightBtn)
+{
+    weekLeftBtn.addEventListener("click", function() {change_curent_week(-1)});
+    weekRightBtn.addEventListener("click",  function() {change_curent_week(1)});
+}
 
 
 let hoursUpBtn = document.getElementById("hours_upBtn");
 let hoursDownBtn = document.getElementById("hours_downBtn");
-hoursUpBtn.addEventListener("click", function() {change_curent_hours(-1)});
-hoursDownBtn.addEventListener("click",  function() {change_curent_hours(1)});
+if(hoursUpBtn && hoursDownBtn)
+{
+    hoursUpBtn.addEventListener("click", function() {change_curent_hours(-1)});
+    hoursDownBtn.addEventListener("click",  function() {change_curent_hours(1)});
+}
+
+let dayLeftBtn = document.getElementById("day_leftBtn");
+let dayRightBtn = document.getElementById("day_rightBtn");
+if(dayLeftBtn && dayRightBtn)
+{
+    day_leftBtn.addEventListener("click", function() {change_curent_day(-1)});
+    day_rightBtn.addEventListener("click",  function() {change_curent_day(1)});
+}
 
 function change_curent_month(direction)
 {
@@ -68,8 +85,24 @@ function change_curent_week(direction)
     currentMonth = new_start_day.getMonth();
     currentDay = new_start_day.getDate();
     currentStartHour = 8;
+    // console.log("Change current week");
     print_schedule();
 }
+
+function change_curent_day(direction)
+{
+    
+    let current_day = new Date(currentYear , currentMonth , currentDay , 0 , 0, 0 ,0 );
+    let new_start_day = new Date(current_day.getTime() + direction * 1 * 24 * 60 * 60 * 1000);
+
+    currentYear = new_start_day.getFullYear();
+    currentMonth = new_start_day.getMonth();
+    currentDay = new_start_day.getDate();
+    currentStartHour = 8;
+    print_schedule();
+}
+
+
 
 
 function change_curent_hours(direction)
