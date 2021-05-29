@@ -106,31 +106,22 @@ footer
 }
 
 
-.schedul{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-    
-    column-gap: 0.5em;
-    row-gap: 0.5em;
-    grid-auto-rows: minmax(0em, auto);
-    background-color: #f1f1f1;
-    padding: 0.5em;
-    margin: 1em;
-    border-radius: 0.5em;
-    top: 50%;
-    left: 50%;
-    transform: translate( 0%, 5%);
-      
-   }
-   /* .schedul .schedul__header {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    text-align: center;
-    background-color:white; 
-    } */
+.schedul
+{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 0.5em;
+  row-gap: 0.5em;
+  grid-auto-rows: minmax(0em, auto);
+  background-color: #f1f1f1;
+  padding: 0.5em;
+  margin: 1em;
+  border-radius: 0.5em;
+  top: 50%;
+  left: 50%;
+  transform: translate( 0%, 5%);
+}
+
   
 .schedul .schedul__details
 {
@@ -163,12 +154,12 @@ footer
 
 .schedul .schedul__btn 
 {
-grid-column-start: 1;
-grid-column-end: 3;
-grid-row-start: 4;
-grid-row-end: 5;
-text-align: center;
-background-color: white;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  text-align: center;
+  background-color: white;
   
 }
   
@@ -551,6 +542,10 @@ width: 100%;
     .schedul__data 
     {
       padding: 0%;
+    }
+    .schedul
+    {
+      font-size: 14px;
     }
 
 }
