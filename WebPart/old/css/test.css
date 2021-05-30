@@ -196,9 +196,7 @@ h1
   background-color:rgb(223, 252, 235);
   border-radius: 5px;
   display: flex;
-  flex-direction: column;
-  height: 80%;
-  
+  flex-direction: column;  
 }
 
 .chat .chat__write-new-message
@@ -286,3 +284,4 @@ h1
 {
     opacity: 0.8;
 }
+

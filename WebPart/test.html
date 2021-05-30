@@ -98,64 +98,76 @@
         <div class="chat">
 
             <div class='chat__user-list'>
+
                 <h1>Doctor list</h1>
-                <div class='chat__user-doctor'>
-                    <p>Specializare - Doctor Ana1</p>
-                </div>
-                <div class='chat__user-doctor'>
-                    <p>Specializare - Doctor Ana2</p>
-                </div>
-                <div class='chat__user-doctor'>
-                    <p>Specializare - Doctor Ana3</p>
-                </div>
-                <div class='chat__user-doctor'>
-                    <p>Specializare - Doctor Ana4</p>
-                </div>
+                <table>
+                    <!-- <tr>
+                        <th>Department</th>
+                        <th>Name</th>
+                    </tr> -->
+                    <tr>
+                        <td>Cardiology</td>
+                        <td>Ana Popescu</td>
+                    </tr>
+                    <tr>
+                        <td>Cardiology</td>
+                        <td>Ana Ionescu</td>
+                    </tr>
+                    <tr>
+                        <td>Cardiology</td>
+                        <td>George Popescu</td>
+                    </tr>
+                    <tr>
+                        <td>Cardiology</td>
+                        <td>George Ion</td>
+                    </tr>
+                </table>
+
             </div>
 
             <div class='chat__messages-box'>
 
                 <a class='chat__messages-box__txt-sent'>
-                    <span class="chat__messages-box__person"> My Name: </span>
+                    <span class="chat__messages-box__person"> <i class="fas fa-user"></i> My Name: </span>
                     <span class="chat__messages-box__message"> Buna ziua. Am o intrebare legata de tratament. </span>
                 </a>
 
                 <a class='chat__messages-box__txt-received'>
-                    <span class="chat__messages-box__person"> Doctor Name: </span>
+                    <span class="chat__messages-box__person"> <i class="fas fa-user-md"></i> Doctor Name: </span>
                     <span class="chat__messages-box__message"> Buna ziua. Da spuneti va rog! </span>
                 </a>
 
                 <a class='chat__messages-box__voice-sent'>
-                    <span class="chat__messages-box__person"> My Name: </span>
+                    <span class="chat__messages-box__person"> <i class="fas fa-user"></i> My Name: </span>
                     <span class="chat__messages-box__message"> Voice message sent. Play it <i class="fas fa-play"></i>
                     </span>
                 </a>
 
                 <a class='chat__messages-box__voice-received'>
-                    <span class="chat__messages-box__person"> Doctor Name: </span>
+                    <span class="chat__messages-box__person"> <i class="fas fa-user-md"></i> Doctor Name: </span>
                     <span class="chat__messages-box__message"> Voice message received. Play it <i
                             class="fas fa-play"></i> </span>
                 </a>
 
                 <a class='chat__messages-box__txt-sent'>
-                    <span class="chat__messages-box__person"> My Name: </span>
+                    <span class="chat__messages-box__person"> <i class="fas fa-user"></i> My Name: </span>
                     <span class="chat__messages-box__message"> Multumesc frumos! </span>
                 </a>
 
                 <a class='chat__messages-box__txt-received'>
-                    <span class="chat__messages-box__person"> Doctor Name: </span>
+                    <span class="chat__messages-box__person"> <i class="fas fa-user-md"></i> Doctor Name: </span>
                     <span class="chat__messages-box__message"> Cu placere. </span>
                 </a>
 
             </div>
 
             <div class='chat__write-new-message'>
-                <input type="new-message" placeholder="Write new message here.." required>
+                <input type="new-message" placeholder="Write a text message here.." required>
             </div>
 
             <div class='chat__send-new-message'>
-                <button type="chat__send-new-message__text">Send txt</button>
-                <button type="chat__send-new-message__voice">Send voice</button>
+                <button type="chat__send-new-message__text"> <i class="fas fa-paper-plane"></i> </button>
+                <button type="chat__send-new-message__voice"> <i class="fas fa-microphone"></i> </button>
                 <p>
             </div>
 
