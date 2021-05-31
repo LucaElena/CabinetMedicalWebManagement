@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/PaginaChatPatientV2.css">
+    <link rel="stylesheet" href="./css/PaginaChatDoctorV2.css">
     <script src="https://kit.fontawesome.com/9ab9988c3d.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" type="image/jpg" href="./images/favicon.jpg" />
     <title>Cabinet Medical Web Management</title>
@@ -101,58 +101,61 @@
 
                 <!-- <input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="none"> -->
 
-                    <select class="chat__user-list__deparment-filter">
-                        <option value="Default"> Department </option>
-                        <option value="Pediatrics"> Pediatrics </option>
-                        <option value="Cardiology"> Cardiology</option>
-                        <option value="Gastroenterology"> Gastroenterology </option>
-                        <option value="Allergy"> Allergy </option>
-                        <option value="General surgery"> General surgery</option>
-                        <option value="Dermatology"> Dermatology </option>
-                        <option value="Endocrinology">Endocrinology</option>
-                        <option value="Gastroenterology"> Gastroenterology </option>
-                        <option value="Neurology"> Neurology </option>
-                        <option value="Ophthalmology"> Ophthalmology </option>
-                    </select>
-                    <table>
-                        <tr>
-                            <th>Department</th>
-                            <th>Name</th>
-                        </tr>
 
-                        <tr>
-                            <td><input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user"> Cardiology</td>
-                            <td>Ana Popescu</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user"> Gastroenterology</td>
-                            <td>Ana Ionescu</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user"> Cardiology</td>
-                            <td>George Popescu</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user"> Cardiology</td>
-                            <td>George Ion</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user"> Gastroenterology</td>
-                            <td>Ana Popescu</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user"> Infectious disease</td>
-                            <td>Ana Ionescu</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user"> Gastroenterology</td>
-                            <td>George Popescu</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user"> Endocrinology</td>
-                            <td>George Ion</td>
-                        </tr>
-                    </table>
+                
+                <div class='chat__user-list__filter'>
+                    <input type="chat__user-list__filter__by-name" placeholder="Search by name" required>
+                </div>
+
+
+
+                <!-- <input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user">
+                <label for="chat__user-list__selected-user">Ana Popescu </label>
+                <input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user">
+                <label for="chat__user-list__selected-user">Ana Ionescu </label>
+                <input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user">
+                <label for="chat__user-list__selected-user">George Popescu </label>
+                <input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user">
+                <label for="chat__user-list__selected-user">George Ion </label>
+                <input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user">
+                <label for="chat__user-list__selected-user">Ana Popescu </label>
+                <input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user">
+                <label for="chat__user-list__selected-user">Ana Ionescu </label>
+                <input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user">
+                <label for="chat__user-list__selected-user">George Popescu </label>
+                <input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user">
+                <label for="chat__user-list__selected-user">George Ionescu </label> -->
+                <table>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+
+                    <tr>
+                        <td><input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user"> Ana Popescu</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user"> Ana Ionescu</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user"> George Popescu</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user"> George Ion</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user"> Ana Popescu</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user"> Ana Ionescu</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user"> George Popescu</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="chat__user-list__select" name="chat__user-list__selected-user" value="id-user"> George Ion</td>
+                    </tr>
+                </table>
+
 
             </div>
 
@@ -170,34 +173,34 @@
                 <a class='chat__messages-box__empty'> </a>
 
                 <a class='chat__messages-box__txt-sent'>
-                    <span class="chat__messages-box__person"> <i class="fas fa-user"></i> My patient name: </span>
+                    <span class="chat__messages-box__person"> <i class="fas fa-user"></i> Patient name: </span>
                     <span class="chat__messages-box__message"> Buna ziua. Am o intrebare legata de tratament. </span>
                 </a>
 
                 <a class='chat__messages-box__txt-received'>
-                    <span class="chat__messages-box__person"> <i class="fas fa-user-md"></i> Doctor name: </span>
+                    <span class="chat__messages-box__person"> <i class="fas fa-user-md"></i> My doctor name: </span>
                     <span class="chat__messages-box__message"> Buna ziua. Da spuneti va rog! </span>
                 </a>
 
                 <a class='chat__messages-box__voice-sent'>
-                    <span class="chat__messages-box__person"> <i class="fas fa-user"></i> My patient name: </span>
+                    <span class="chat__messages-box__person"> <i class="fas fa-user"></i> Patient name: </span>
                     <span class="chat__messages-box__message"> Voice message sent. Play it <i class="fas fa-play"></i>
                     </span>
                 </a>
 
                 <a class='chat__messages-box__voice-received'>
-                    <span class="chat__messages-box__person"> <i class="fas fa-user-md"></i> Doctor name: </span>
+                    <span class="chat__messages-box__person"> <i class="fas fa-user-md"></i> My doctor name: </span>
                     <span class="chat__messages-box__message"> Voice message received. Play it <i
                             class="fas fa-play"></i> </span>
                 </a>
 
                 <a class='chat__messages-box__txt-sent'>
-                    <span class="chat__messages-box__person"> <i class="fas fa-user"></i> My patient name: </span>
+                    <span class="chat__messages-box__person"> <i class="fas fa-user"></i> Patient name: </span>
                     <span class="chat__messages-box__message"> Multumesc frumos! </span>
                 </a>
 
                 <a class='chat__messages-box__txt-received'>
-                    <span class="chat__messages-box__person"> <i class="fas fa-user-md"></i> Doctor name: </span>
+                    <span class="chat__messages-box__person"> <i class="fas fa-user-md"></i> My doctor name: </span>
                     <span class="chat__messages-box__message"> Cu placere. </span>
                 </a>
 
