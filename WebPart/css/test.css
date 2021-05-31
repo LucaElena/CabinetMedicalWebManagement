@@ -8,14 +8,7 @@
 }/* curatam intai elementele de decoratiuni default */
 
 
-body
-{
-    background-image: url("../images/background.jpg");
-    background-size: 100% 100%;
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+
 
 header
 {
@@ -23,7 +16,6 @@ header
     height: 2em;
     box-shadow: 0 0 3px black  ;/*linie umbra jos heder pe x,y  cu raza de estompare*/
     background-color: rgb(86, 170, 108);
-
 }
 
 /* scoatem partea de albastru de la butoane */
@@ -42,11 +34,6 @@ a { color: inherit; }
     display: none;
 }
 
-header ul
-{
-    display: flex;
-    justify-content: space-between;
-}
 header ul li
 {
     
@@ -55,8 +42,8 @@ header ul li
     height: 2em;
     text-align: center;
     line-height: 2em;
+    /* background-color:rgb(41, 107, 21) ; */
     margin-right: 2px;
-    
 }
 
 
@@ -85,7 +72,6 @@ header ul li:hover ul li {
     display: block;
     background-color: rgb(86, 170, 108);
 }
-
 
 
 @media (max-width :600px) 
@@ -123,13 +109,12 @@ footer
 
 
 
-.LogIn
+.reset-password
 {
     border-radius: 2em;
     background-color: #f1f1f1;
     padding: 4em;
-    padding-top: 10%;
-    width: 40%;
+    width: 60%;
     /* height: 40%; */
     position: fixed;
     top: 50%;
@@ -138,23 +123,12 @@ footer
     text-align: center;
 }
 
-.LogIn .LogIn__formHeader__logo
-{
-    width: 20%;
-    height: 20%;
-    border-radius: 30em;
-    position: absolute;
-    top: -10%;
-    left: 40%;
-}
-
-
-.LogIn h1
+.reset-password h1
 {
     padding: 0.5em;
 }
 
-.LogIn__form input 
+.reset-password__form input 
 {
     width: 100%;
     padding: 1em 1em;
@@ -168,7 +142,7 @@ footer
   }
 
 
-.LogIn__form button
+.reset-password__form button
 {
     border-radius: 0.5em; 
     background-color: rgb(86, 170, 108);
@@ -180,13 +154,13 @@ footer
     width: 100%; 
 }  
 
-.LogIn__form button:hover 
+.reset-password__form button:hover 
 {
     opacity: 0.8;
 }
 
 
-.LogIn__form label
+.reset-password__form label
 {
     font-weight: bold;
     position:absolute;
@@ -195,7 +169,7 @@ footer
     
 }
 
-.LogIn__formFooter span 
+.reset-password__formFooter span 
 {
     display: block;
 }
@@ -203,11 +177,10 @@ footer
 
 @media (min-width :1000px) 
 {
-    .LogIn
+    .reset-password
     {
         border-radius: 2em;
         padding: 4em;
-        font-size: 16px;
     }
 }
 
@@ -215,50 +188,35 @@ footer
 
 @media (max-width :600px) 
 {
-    .LogIn 
+    .reset-password 
     {
         border-radius: 1em;
         padding: 2em;
         width: 15em;
-        padding-top: 12%;
-        font-size: 14px;
     }
 }
 
 @media (max-width :300px) 
 {
-    .LogIn
+    .reset-password
     {
         border-radius: 1em;
         padding: 0em;
         width: 12em;
-        padding-top: 12%;
-        font-size: 12px;
-        
     }
-    .LogIn__form input 
+    .reset-password__form input 
     {
         padding: 1em 0em;
-        
     }
     
-    .LogIn__form button
+    .reset-password__form button
     {
         width: 100%; 
     }  
-    .LogIn__form button
+    .reset-password__form button
     {
         border-radius: 0.5em; 
         width: 100%; 
-    } 
-    .LogIn .LogIn__formHeader__logo
-    {
-        width: 14%;
-        height: 14%;
-        border-radius: 30em;
-        position: absolute;
-        top: -7%;
-        left: 43%;
-    }
+    }  
 
 }

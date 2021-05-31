@@ -24,54 +24,14 @@
                 </a>
             </li>
 
-            <li>
-                <a class="header_button" href="/schedules/cabinet_ana">
-                    <span class="header_icon"> <i class="fas fa-calendar-plus"></i> </span>
-                    <span class="header_text">Schedules</span>
-                </a>
-            </li>
 
-            <li>
-                <a class="header_button" href="/files/cabinet_ana">
-                    <span class="header_icon"> <i class="fas fa-file-medical"></i> </span>
-                    <span class="header_text">Files</span>
-                </a>
-            </li>
-
+    
             <li>
                 <a class="header_button">
-                    <span class="header_icon"> <i class="fas fa-user-plus"></i> </span>
-                    <span class="header_text">Invite</span>
+                    <span class="header_icon"> <i class="fas fa-sign-in-alt"></i> </span>
+                    <span class="header_text">Log In</span>
                 </a>
-                <ul class="header_button__login">
-                    <li>
-                        <a class="header_button" href="/adduser/patient/cabinet_ana">
-                            <span class="header_icon"> <i class="fas fa-user-injured"></i> </span>
-                            <span class="header_text">Patient</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="header_button" href="/adduser/doctor/cabinet_ana">
-                            <span class="header_icon"> <i class="fas fa-user-md"></i> </span>
-                            <span class="header_text">Doctor</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li>
-                <a class="header_button" href="/chat/cabinet_ana">
-                    <span class="header_icon"> <i class="fas fa-comments"></i> </span>
-                    <span class="header_text">Chat</span>
-                </a>
-            </li>
-
-            <li>
-                <a class="header_button">
-                    <span class="header_icon"> <i class="fas fa-user"></i> </span>
-                    <span class="header_text">User</span>
-                </a>
-                <ul class="header_button__login">
+                <!-- <ul class="header_button__login">
                     <li>
                         <a class="header_button" href="#">
                             <span class="header_icon"> <i class="fas fa-key"></i> </span>
@@ -84,8 +44,7 @@
                             <span class="header_text">Log out</span>
                         </a>
                     </li>
-                </ul>
-
+                </ul> -->
             </li>
 
         </ul>
@@ -95,13 +54,19 @@
 
     <main>
         <div class="LogIn">
+            
+            <div class="LogIn__formHeader">
+                <img class="LogIn__formHeader__logo" src="./images/CMED.jpg" alt="Cmed logo">
+            </div>
+            <!-- <img class="logo" src="./images/CMED.jpg" alt="Cmed logo"> -->
+
             <form action="#" class="LogIn__form">
                 <h1>Login</h1>
 
-                <label>Email/Username</label>
+                <label>Email/Username:</label>
                 <input type="email" placeholder="Enter email or username" required>
 
-                <label>Password</label>
+                <label>Password:</label>
                 <input type="password" placeholder="Enter password" required>
 
                 <button type="submit">Login</button>
