@@ -7,7 +7,14 @@
     font-size: 100%;
 }/* curatam intai elementele de decoratiuni default */
 
-
+body
+{
+    background-image: url("../images/background.jpg");
+    background-size: 100% 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 
 header{
@@ -36,7 +43,8 @@ a { color: inherit; }
 header ul li
 {
     
-    width: calc(16.6% - 2px); /* 6 butoane */
+     /*width: calwc(16.6% - 2px); 6 butoane butoane doctor/cabinet*/
+    width: calc(20% - 2px); /* 5 butoane butoane pacient*/
     float: left;
     height: 2em;
     text-align: center;
