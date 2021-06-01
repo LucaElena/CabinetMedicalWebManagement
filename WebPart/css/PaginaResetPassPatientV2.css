@@ -7,7 +7,6 @@
     font-size: 100%;
 }/* curatam intai elementele de decoratiuni default */
 
-
 body
 {
     background-image: url("../images/background.jpg");
@@ -18,8 +17,7 @@ body
 }
 
 
-header
-{
+header{
     padding: 1em;
     height: 2em;
     box-shadow: 0 0 3px black  ;/*linie umbra jos heder pe x,y  cu raza de estompare*/
@@ -45,7 +43,8 @@ a { color: inherit; }
 header ul li
 {
     
-    width: calc(16.6% - 2px); /* 6 butoane */
+     /*width: calwc(16.6% - 2px); 6 butoane butoane doctor/cabinet*/
+    width: calc(20% - 2px); /* 5 butoane butoane pacient*/
     float: left;
     height: 2em;
     text-align: center;
@@ -61,8 +60,7 @@ header ul li a
     user-select: none;
 }
 
-header ul li a:hover 
-{
+header ul li a:hover {
     background-color:rgb(41, 107, 21) ;
     color: rgb(20, 54, 28);
     transition:.5s ease;
@@ -103,15 +101,15 @@ header ul li:hover ul li {
 
 }
 
-footer
-{
+footer{
     box-shadow: 0 0 3px black  ;/*linie umbra jos heder pe x,y  cu raza de estompare*/
     position:fixed;
     bottom: 0px;
     left: 0;
     width: 100%;
     height: 50px;
-}
+ }
+
 
 
 
