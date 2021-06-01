@@ -115,7 +115,7 @@ footer
 }
 
 
-.invitePatient
+.inviteDoctor
 {
     border-radius: 2em;
     background-color: #f1f1f1;
@@ -129,16 +129,16 @@ footer
     text-align: center;
 }
 
-.invitePatient h1
+.inviteDoctor h1
 {
     padding: 0.5em;
 }
 
-.invitePatient__form input 
+.inviteDoctor__form input 
 {
     width: 100%;
-    padding: 1em 1em;
-    margin: 2em 0em;
+    padding: 0.75em 0.75em;
+    margin: 1em 0em;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -147,7 +147,7 @@ footer
 
   }
 
-  .invitePatient__form button
+  .inviteDoctor__form button
 {
     border-radius: 0.5em; 
     background-color: rgb(86, 170, 108);
@@ -159,12 +159,12 @@ footer
     width: 100%; 
 }  
 
-.invitePatient__form button:hover 
+.inviteDoctor__form button:hover 
 {
     opacity: 0.8;
 }
 
-.invitePatient__form label
+.inviteDoctor__form label
 {
     font-weight: bold;
     position:absolute;
@@ -177,7 +177,7 @@ footer
 
 @media (min-width :1000px) 
 {
-    .invitePatient
+    .inviteDoctor
     {
         border-radius: 2em;
         padding: 3em;
@@ -188,7 +188,7 @@ footer
 
 @media (max-width :600px) 
 {
-    .invitePatient 
+    .inviteDoctor 
     {
         border-radius: 1em;
         padding: 2em;
@@ -198,22 +198,22 @@ footer
 
 @media (max-width :300px) 
 {
-    .invitePatient
+    .inviteDoctor
     {
         border-radius: 1em;
         padding: 0em;
         width: 12em;
     }
-    .invitePatient__form input 
+    .inviteDoctor__form input 
     {
         padding: 1em 0em;
     }
     
-    .invitePatient__form button
+    .inviteDoctor__form button
     {
         width: 100%; 
     }  
-    .invitePatient__form button
+    .inviteDoctor__form button
     {
         border-radius: 0.5em; 
         width: 100%; 
