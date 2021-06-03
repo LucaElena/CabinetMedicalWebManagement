@@ -23,7 +23,6 @@ header
     height: 2em;
     box-shadow: 0 0 3px black  ;/*linie umbra jos heder pe x,y  cu raza de estompare*/
     background-color: rgb(86, 170, 108);
-
 }
 
 /* scoatem partea de albastru de la butoane */
@@ -47,6 +46,7 @@ header ul
     display: flex;
     justify-content: space-between;
 }
+
 header ul li
 {
     
