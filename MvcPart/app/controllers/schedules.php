@@ -25,29 +25,7 @@
 						  case "cabinet":
 								$cabinet_departments = $user->getDepartments($userName);
 								$cabinet_doctors = $user->getDoctors($userName);
-								$info['generalbar'] = '
-													<li>
-													<a href="/cabinet/' . $userName . '"><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
-													</li>
-													<li>
-														<a class="header_button" href="/schedules/' . $userName . '">Schedules</a>
-													</li>
-													<li>
-														<a class="header_button" href="/files/' . $userName . '">Patients Files</a>
-													</li>
-													<li>
-														<a class="header_button" href="/adduser/patient/' . $userName . '">Invite Patient</a>
-													</li>
-													<li>
-														<a class="header_button" href="/adduser/doctor/' . $userName . '">Invite Doctor</a>
-													</li>
-													<li>
-														<a class="header_button" href="/chat/' . $userName . '">Chat</a>
-													</li>
-													<li class="login">
-														<a href="/login">Log In</a>
-													</li>
-													';
+								$info['generalbar'] = str_replace("GENERIC_USERNAME",$userName,GENERAL_CABINET_BAR);
 
 								foreach($cabinet_departments as $department)
 								{
