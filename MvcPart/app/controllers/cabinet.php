@@ -9,32 +9,7 @@
 			$info['username'] =  $cabinetUserName;
 			$info['type'] = 'cabinet';
 			//TO DO : diferent general bar for different users types:
-			$info['generalbar'] = '
-				<li>
-					<a href="/cabinet/' . $cabinetUserName . '"><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
-				</li>
-				<li>
-					<a class="header_button" href="/schedules/' . $cabinetUserName . '">Schedules</a>
-				</li>
-				<li>
-					<a class="header_button" href="/files/' . $cabinetUserName . '">Patients Files</a>
-				</li>
-				<li>
-					<a class="header_button" href="/adduser/patient/' . $cabinetUserName . '">Invite Patient</a>
-				</li>
-				<li>
-					<a class="header_button" href="/adduser/doctor/' . $cabinetUserName . '">Invite Doctor</a>
-				</li>
-				<li>
-					<a class="header_button" href="/chat/' . $cabinetUserName . '">Chat</a>
-				</li>
-				<li class="login">
-					<a href="/login">Log In</a>
-				</li>
-				';
-
-
-
+			$info['generalbar'] = str_replace("GENERIC_USERNAME",$cabinetUserName,GENERAL_CABINET_BAR);
  			if($cabinetUserName)
             {
 				$user_exist = $user->isDefined($cabinetUserName);
