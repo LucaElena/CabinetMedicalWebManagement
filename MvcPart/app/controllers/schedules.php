@@ -11,6 +11,7 @@
 			$info['departments'] = '';
 			$info['doctors'] = '';
 			$info['generalbar'] = '';
+			$info['schedule_forms'] = '';
 			$info['type'] = '';
 
 			if($userName)
@@ -19,14 +20,14 @@
 				if ($user_exist)
 				{
 					$user_type = $user->getUserType($userName);
+
+					
 					
 					switch ($user_type) 
 					{
 						  case "cabinet":
 								$cabinet_departments = $user->getDepartments($userName);
 								$cabinet_doctors = $user->getDoctors($userName);
-								$info['generalbar'] = str_replace("GENERIC_USERNAME",$userName,GENERAL_CABINET_BAR);
-
 								foreach($cabinet_departments as $department)
 								{
 									$info['departments'] = $info['departments'] . '<option value ="' . $department . '"> ' . $department . ' </option>';
@@ -35,51 +36,17 @@
 								{
 									$info['doctors'] = $info['doctors'] . '<option value ="' . $doctor['department'] . '_' . $doctor['first_name'] . '_' . $doctor['last_name'] . '"> ' . $doctor['department'] . ' ' . $doctor['first_name'] . ' ' . $doctor['last_name'] . ' </option>';
 								}
+								$info['generalbar'] = str_replace("GENERIC_USERNAME",$userName,GENERAL_CABINET_BAR);
 								$this->view('schedules/index' , $info);
 								break;
 
 						  case "doctor":
-								$info['generalbar'] = '
-												<li>
-												<a href="/doctor/' . $userName . '"><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
-												</li>
-												<li>
-													<a class="header_button" href="/schedules/' . $userName . '">Schedules</a>
-												</li>
-												<li>
-													<a class="header_button" href="/files/' . $userName . '">Patients Files</a>
-												</li>
-												<li>
-													<a class="header_button" href="/adduser/patient/' . $userName . '">Invite Patient</a>
-												</li>
-												<li>
-													<a class="header_button" href="/chat/' . $userName . '">Chat</a>
-												</li>
-												<li class="login">
-													<a href="/login">Log In</a>
-												</li>
-												';
+								$info['generalbar'] = str_replace("GENERIC_USERNAME",$userName,GENERAL_DOCTOR_BAR);
 								
 								$this->view('schedules/index' , $info);
 								break;
 						  case "patient":
-										$info['generalbar'] = '
-										<li>
-										<a href="/patient/' . $userName . '"><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
-										</li>
-										<li>
-											<a class="header_button" href="/schedules/' . $userName . '">Schedules</a>
-										</li>
-										<li>
-											<a class="header_button" href="/files/' . $userName . '">Patients Files</a>
-										</li>
-										<li>
-											<a class="header_button" href="/chat/' . $userName . '">Chat</a>
-										</li>
-										<li class="login">
-											<a href="/login">Log In</a>
-										</li>
-										';
+										$info['generalbar'] = str_replace("GENERIC_USERNAME",$userName,GENERAL_PATIENT_BAR);
 							
 								$this->view('schedules/index' , $info);
 								break;

@@ -1,13 +1,21 @@
 <?php
-	class Login extends Controller
+	class ResetPass extends Controller
 	{
 		
 		
-		public function index()
+		public function index($userName = "")
 		{
-			$userdata['name'] = '';
-			echo 'TO DO : index';
-            $this->view('login/index', $userdata);
+
+
+            $user = $this->model('userModel');
+			$info['username'] =  $userName;
+			$info['type'] = 'cabinet';
+			//TO DO : diferent general bar for different users types:
+			$info['generalbar'] = str_replace("GENERIC_USERNAME",$userName,GENERAL_CABINET_BAR);
+
+
+			$this->view('resetpass/index' , $info);
+
 		}
 
 		public function singUp()

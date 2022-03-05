@@ -5,10 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/PaginaGeneralaV2.css">
-
-    <title>Cabinet Medical Web Management</title>
     <script src="https://kit.fontawesome.com/9ab9988c3d.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" type="image/jpg" href="/images/favicon.jpg"/>
+    <title>Cabinet Medical Web Management</title>
 </head>
 <body>
     <header>
