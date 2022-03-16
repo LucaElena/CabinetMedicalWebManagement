@@ -5,11 +5,12 @@
 		public function index($cabinetUserName = '')
 		{
 			
+			echo("Cabinet index" . $cabinetUserName);
 			$user = $this->model('userModel');
 			$info['username'] =  $cabinetUserName;
 			$info['type'] = 'cabinet';
-			//TO DO : diferent general bar for different users types:
-			$info['generalbar'] = str_replace("GENERIC_USERNAME",$cabinetUserName,GENERAL_CABINET_BAR);
+			$info['generalbar'] = str_replace("GENERIC_USERNAME" , $cabinetUserName , GENERAL_CABINET_BAR);
+
  			if($cabinetUserName)
             {
 				$user_exist = $user->isDefined($cabinetUserName);
@@ -22,6 +23,7 @@
 					}
 					else
 					{
+
 						header('Location: ' . URL . 'errors/error403' , $_SERVER['REQUEST_URI']);
 					}
 				}

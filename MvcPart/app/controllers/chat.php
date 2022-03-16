@@ -7,32 +7,42 @@
 			// echo 'home/index: ' . $param . ' ' . $other_param;
 			$user = $this->model('userModel');
 			$info['username'] =  $userName;
-			$info['type'] = 'cabinet';
-			//TO DO : diferent general bar for different users types:
-			$info['generalbar'] = '
-				<li>
-				<a href="/cabinet/' . $userName . '"><img class="logo" src="/images/CMED.jpg" alt="Cmed logo"></a>
-				</li>
-				<li>
-					<a class="header_button" href="/schedules/' . $userName . '">Schedules</a>
-				</li>
-				<li>
-					<a class="header_button" href="/files/' . $userName . '">Patients Files</a>
-				</li>
-				<li>
-					<a class="header_button" href="/adduser/patient/' . $userName . '">Invite Patient</a>
-				</li>
-				<li>
-					<a class="header_button" href="/adduser/doctor/' . $userName . '">Invite Doctor</a>
-				</li>
-				<li>
-					<a class="header_button" href="/chat/' . $userName . '">Chat</a>
-				</li>
-				<li class="login">
-					<a href="/login">Log In</a>
-				</li>
-				';
-            $this->view('chat/index' , $info);
+			$info['generalbar'] = '';
+			$info['type'] = '';
+			
+			if($userName)
+			{
+				$user_exist = $user->isDefined($userName);
+				if ($user_exist)
+				{
+					$user_type = $user->getUserType($userName);
+					switch($user_type)
+					{
+						case('cabinet'):
+						{
+							$info['type'] = 'cabinet';
+							$info['generalbar'] = str_replace("GENERIC_USERNAME",$userName, GENERAL_CABINET_BAR);
+							break;
+						}
+						case('doctor'):
+						{
+							$info['type'] = 'doctor';
+							$info['generalbar'] = str_replace("GENERIC_USERNAME",$userName, GENERAL_DOCTOR_BAR);
+							break;
+							
+						}
+						case('patient'):
+						{
+							$info['type'] = 'patient';
+							$info['generalbar'] = str_replace("GENERIC_USERNAME",$userName, GENERAL_PATIENT_BAR);
+							break;
+							
+						}
+					}
+				}
+			}
+			$this->view('chat/index' , $info);
+            
         
 
 		}

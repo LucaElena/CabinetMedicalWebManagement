@@ -29,7 +29,7 @@
 
             <!-- <label class="schedul__details__label1" >Department</label> -->
             <select class=" schedul__details__section">
-                <option value="Department"> Department </option>
+                <?=$data['departament_option_value']?>
                 <?=$data['departments']?>
             </select>
 
@@ -37,7 +37,7 @@
 
             <!-- <label class="schedul__details__label2" >Doctor</label> -->
             <select class=" schedul__details__doctors">
-                <option value="Doctor"> Doctor </option>
+                <?=$data['doctor_option_value']?>
                 <?=$data['doctors']?>
             </select>
 
@@ -84,12 +84,18 @@
 
         </div>
         <div class="schedule__calendar">
-            <div class="schedule__calendar__month" id="selected_month">JANUARY 2021</div>
+            <!-- 
+            <div class="schedule__calendar__month" id="selected_month">JANUARY 2022</div>
+            -->
+            <?=$data['schedule_calendar_bar_month']?>
             <!-- <button type="button" class="schedule__calendar__left_month_btn" id="month_leftBtn">&#9668;</button>
             <button type="button" class="schedule__calendar__left_week_btn" id="week_leftBtn">&#9668;</button> -->
-            <button type="button" class="schedule__calendar__left_month_btn" id="week_leftBtn">&#9668;</button>
-            <button type="button" class="schedule__calendar__left_week_btn" id="day_leftBtn">&#9668;</button>
+            <button type="button" class="schedule__calendar__left_month_btn" id="month_leftBtn">&#9668;</button>
+            <button type="button" class="schedule__calendar__left_week_btn" id="week_leftBtn">&#9668;</button>
             <div class="schedule__calendar__inside">
+
+
+                <!-- pusa in cod deja pt generare dinamica :) 
                 <div class="schedule__calendar__inside__head">
                     <div class="schedule__calendar__inside__day" id="day_0_schedule">MON 05/04</div>
                 </div>
@@ -111,11 +117,13 @@
                 <div class="schedule__calendar__inside__head">
                     <div class="schedule__calendar__inside__day" id="day_6_schedule">SUN 11/04</div>
                 </div>
-
+                -->
+               
+                <?=$data['schedule_calendar_bar_week']?>
+                <!-- 
                 <div class="schedule__calendar__inside__hours_btn">
                     <button type="button" class="schedule__calendar__inside__hours_btn__bussy" value="08:00"
-                        id="calendar_row1_col1">
-                        8:00 <span class="hover-value">Popescu Ion 0747678790</span></button>
+                        id="calendar_row1_col1"> 8:00 <span class="hover-value">Popescu Ion 0747678790</span></button>
                 </div>
                 <div class="schedule__calendar__inside__hours_btn">
                     <button type="button" class="schedule__calendar__inside__hours_btn__closed" value="08:00"
@@ -254,15 +262,18 @@
                         id="calendar_row7_col5"> 12:00</button>
                 </div>
 
+                -->
+                <?=$data['schedule_calendar_inside']?>
 
                 <button type="button" class="schedule__calendar__inside__down_btn"
                     id="hours_downBtn">&#9660;</button>
                 <button type="button" class="schedule__calendar__inside__up_btn" id="hours_upBtn">&#9650;</button>
+                
             </div>
             <!-- <button type="button" class="schedule__calendar__right_week_btn" id="week_rightBtn">&#9658;</button>
             <button type="button" class="schedule__calendar__right_month_btn" id="month_rightBtn">&#9658;</button> -->
-            <button type="button" class="schedule__calendar__right_week_btn" id="day_rightBtn">&#9658;</button>
-            <button type="button" class="schedule__calendar__right_month_btn" id="week_rightBtn">&#9658;</button>
+            <button type="button" class="schedule__calendar__right_week_btn" id="week_rightBtn">&#9658;</button>
+            <button type="button" class="schedule__calendar__right_month_btn" id="month_rightBtn">&#9658;</button>
         </div>
 
 
@@ -275,9 +286,9 @@
         </div>
 
 
-        <script src="./js/calendar.js"></script>
+        <script src="/js/calendar.js"></script>
     </div>
     </main>
-   <script src="/js/calendar.js"></script>
+   
 </body>
 </html>

@@ -3,29 +3,49 @@ var today = new Date();
 var day = today.getDay() ;  //ziua saptamanii 0 pana la 6
 var currentYear = today.getFullYear();
 var currentMonth = today.getMonth();
-var currentDay = today.getDate() - day; //ziua lunii 0 pana la 31 // Setam ziua curent la prima zi a saptamanii
+var currentDay = today.getDate(); //ziua lunii 0 pana la 31 // Setam ziua curent la prima zi a saptamanii
 var currentStartHour = 8;
 var number_hours_per_row = 5
+console.log("Y=" + currentYear + " M=" + currentMonth + " D=" + currentDay + " H=" + currentStartHour)
 
 
 var mounth_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-var week_names = [ 'Monday' , 'Tuesday' , 'Wednesday' , 'Thursday' , 'Friday' , 'Saturday' , 'Sunday'];
+var week_names = [ 'Sunday' , 'Monday' , 'Tuesday' , 'Wednesday' , 'Thursday' , 'Friday' , 'Saturday' ];
 
 let monthLeftBtn = document.getElementById("month_leftBtn");
 let monthRightBtn = document.getElementById("month_rightBtn");
-monthLeftBtn.addEventListener("click", function() {change_curent_month(-1)});
-monthRightBtn.addEventListener("click",  function() {change_curent_month(1)});
+
+if(monthLeftBtn && monthRightBtn)
+{
+    monthLeftBtn.addEventListener("click", function() {change_curent_month(-1)});
+    monthRightBtn.addEventListener("click",  function() {change_curent_month(1)});
+}
 
 let weekLeftBtn = document.getElementById("week_leftBtn");
 let weekRightBtn = document.getElementById("week_rightBtn");
-weekLeftBtn.addEventListener("click", function() {change_curent_week(-1)});
-weekRightBtn.addEventListener("click",  function() {change_curent_week(1)});
+
+if(weekLeftBtn || weekRightBtn)
+{
+    weekLeftBtn.addEventListener("click", function() {change_curent_week(-1)});
+    weekRightBtn.addEventListener("click",  function() {change_curent_week(1)});
+}
 
 
 let hoursUpBtn = document.getElementById("hours_upBtn");
 let hoursDownBtn = document.getElementById("hours_downBtn");
-hoursUpBtn.addEventListener("click", function() {change_curent_hours(-1)});
-hoursDownBtn.addEventListener("click",  function() {change_curent_hours(1)});
+if(hoursUpBtn && hoursDownBtn)
+{
+    hoursUpBtn.addEventListener("click", function() {change_curent_hours(-1)});
+    hoursDownBtn.addEventListener("click",  function() {change_curent_hours(1)});
+}
+
+let dayLeftBtn = document.getElementById("day_leftBtn");
+let dayRightBtn = document.getElementById("day_rightBtn");
+if(dayLeftBtn && dayRightBtn)
+{
+    day_leftBtn.addEventListener("click", function() {change_curent_day(-1)});
+    day_rightBtn.addEventListener("click",  function() {change_curent_day(1)});
+}
 
 function change_curent_month(direction)
 {
@@ -68,8 +88,24 @@ function change_curent_week(direction)
     currentMonth = new_start_day.getMonth();
     currentDay = new_start_day.getDate();
     currentStartHour = 8;
+    // console.log("Change current week");
     print_schedule();
 }
+
+function change_curent_day(direction)
+{
+    
+    let current_day = new Date(currentYear , currentMonth , currentDay , 0 , 0, 0 ,0 );
+    let new_start_day = new Date(current_day.getTime() + direction * 1 * 24 * 60 * 60 * 1000);
+
+    currentYear = new_start_day.getFullYear();
+    currentMonth = new_start_day.getMonth();
+    currentDay = new_start_day.getDate();
+    currentStartHour = 8;
+    print_schedule();
+}
+
+
 
 
 function change_curent_hours(direction)
@@ -85,6 +121,12 @@ function change_curent_hours(direction)
     print_schedule();
 }
 
+function getMonday(d) {
+  d = new Date(d);
+  var day = d.getDay(),
+      diff = d.getDate() - day + (day == 0 ? -6:1); // adjust when day is sunday
+  return new Date(d.setDate(diff));
+}
 
 
 function print_schedule()
@@ -93,14 +135,17 @@ function print_schedule()
     let current_day = new Date(currentYear , currentMonth , currentDay , 0 , 0, 0 ,0 );
     //setam luna/anul
     document.getElementById("selected_month").innerHTML = mounth_names[ currentMonth].toUpperCase() + " " + currentYear;
-
+    
+    current_monday = getMonday(current_day)
     //setam zile saptamanii
     for(var i = 0; i < 7; i++)
     {
         
-        var loopDate =  new Date(current_day.getTime() + i * 24 * 60 * 60 * 1000);
+        var loopDate =  new Date(current_monday.getTime() + i * 24 * 60 * 60 * 1000);
+        //console.log("ziua " + i + " = " + loopDate)
         //setam zile saptamanii
-        document.getElementById("day_" + i + "_schedule").innerHTML = week_names[ loopDate.getDay()].substring(0, 3).toUpperCase() + " " + ("0" + (loopDate.getDate())).slice(-2) + "/" + ("0" + (loopDate.getMonth() + 1)).slice(-2);
+        //console.log( parseInt(loopDate.getDay()) )
+        document.getElementById("day_" + i + "_schedule").innerHTML = week_names[ parseInt(loopDate.getDay())].substring(0, 3).toUpperCase() + " " + ("0" + (loopDate.getDate())).slice(-2) + "/" + ("0" + (loopDate.getMonth() + 1)).slice(-2);
         
         for(var j = 0; j < number_hours_per_row; j++)
         {

@@ -2,7 +2,8 @@
 <?php
 	class Home extends Controller
 	{
-
+            
+            
 		public function index($userName = "")
 		{
 
@@ -14,7 +15,14 @@
                   // $userId = "cabinet_ana";
 
                   $user = $this->model('UserModel');
-                  // print_r("Home index ", $userName);
+                  //print_r("Home index ", $userName);
+
+                  #temporar adaugam un user pentru test. Trebuie sters
+                  if (!$userName)
+                  {
+                        $userName = "cabinet_maria";
+                  }
+
                   if($userName)
                   {
                         $user_exist = $user->isDefined($userName);
@@ -45,6 +53,7 @@
                         {
                               
                               header('Location: ' . URL . 'errors/error404' . $_SERVER['REQUEST_URI']);
+            
                         }
                   }
                   else
