@@ -16,8 +16,8 @@ body
     background-position: center;
 }
 
-
-header{
+header
+{
     padding: 1em;
     height: 2em;
     box-shadow: 0 0 3px black  ;/*linie umbra jos heder pe x,y  cu raza de estompare*/
@@ -78,12 +78,33 @@ header ul li:hover ul li {
     background-color: rgb(86, 170, 108);
 }
 
+.welcome .welcome__message
+{
+    font-size: large;
+}
+footer{
+    box-shadow: 0 0 3px black  ;/*linie umbra jos heder pe x,y  cu raza de estompare*/
+    position:fixed;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    font-size: large;
+ }
 
 @media (max-width :600px) 
 {
     .header_text
     {
         display: none;
+    }
+    .welcome .welcome__message 
+    {
+        font-size: medium;
+    }
+    footer
+    {
+        font-size: medium;
     }
 }
 
@@ -97,15 +118,16 @@ header ul li:hover ul li {
     {
         display: none;
     }
+    .welcome .welcome__message
+    {
+        font-size: small;
+    }
+    footer
+    {
+        font-size: small;
+    }
 
 }
 
-footer{
-    box-shadow: 0 0 3px black  ;/*linie umbra jos heder pe x,y  cu raza de estompare*/
-    position:fixed;
-    bottom: 0px;
-    left: 0;
-    width: 100%;
-    height: 50px;
- }
+
 

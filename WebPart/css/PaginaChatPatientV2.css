@@ -16,8 +16,8 @@ body
     background-position: center;
 }
 
-
-header{
+header
+{
     padding: 1em;
     height: 2em;
     box-shadow: 0 0 3px black  ;/*linie umbra jos heder pe x,y  cu raza de estompare*/
@@ -43,8 +43,7 @@ a { color: inherit; }
 header ul li
 {
     
-     /*width: calwc(16.6% - 2px); 6 butoane butoane doctor/cabinet*/
-    width: calc(20% - 2px); /* 5 butoane butoane pacient*/
+    width: calc(16.6% - 2px);/* 6 butoane butoane doctor/cabinet*//*width: calc(20% - 2px); /* 5 butoane butoane pacient*/
     float: left;
     height: 2em;
     text-align: center;

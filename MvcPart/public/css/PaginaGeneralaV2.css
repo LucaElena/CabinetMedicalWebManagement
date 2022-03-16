@@ -73,10 +73,12 @@ header ul li ul li
     width: 100%;
 }
 
-header ul li:hover ul li {
+header ul li:hover ul li
+{
     display: block;
     background-color: rgb(86, 170, 108);
 }
+
 
 
 @media (max-width :600px) 
@@ -99,6 +101,10 @@ header ul li:hover ul li {
     }
 
 }
+
+
+
+
 
 footer{
     box-shadow: 0 0 3px black  ;/*linie umbra jos heder pe x,y  cu raza de estompare*/
