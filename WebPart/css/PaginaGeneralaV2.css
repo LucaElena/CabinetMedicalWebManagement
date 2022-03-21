@@ -22,6 +22,7 @@ header
     height: 2em;
     box-shadow: 0 0 3px black  ;/*linie umbra jos heder pe x,y  cu raza de estompare*/
     background-color: rgb(86, 170, 108);
+    
 }
 
 /* scoatem partea de albastru de la butoane */
@@ -30,40 +31,50 @@ a { color: inherit; }
 /* dimensiunea logo imagine */
 .logo img
 {
-    width: 2em; 
+    width: 2em;
     height: auto;
-    border-radius: 10px ;
+    border-radius: 0.6em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.2em;
 }
+
 
 .header_icon_logo
 {
     display: none;
 }
 
+
 header ul li
 {
     
-    width: calc(16.6% - 2px); /* 6 butoane */
+    width: calc(16.6% - 4px); /* 6 butoane */
     float: left;
     height: 2em;
     text-align: center;
     line-height: 2em;
     /* background-color:rgb(41, 107, 21) ; */
-    margin-right: 2px;
+    margin-right: 3px;
+    z-index: 9999; /* facem meniul suprapus peste toate celelalte elemente cand coboara. Fara astea doua devine transparent */
+    position: relative;   
 }
-
 
 header ul li a
 {
     display: block;
     user-select: none;
+    
 }
 
 header ul li a:hover {
     background-color:rgb(41, 107, 21) ;
     color: rgb(20, 54, 28);
     transition:.5s ease;
-    border-radius: 1em;
+    border-radius: 0.4em;
+    /*transform: scale(calc(0.95));*/
+    
 }
 
 
@@ -76,40 +87,108 @@ header ul li ul li
 header ul li:hover ul li {
     display: block;
     background-color: rgb(86, 170, 108);
+    opacity: 100;
 }
 
 .welcome .welcome__message
 {
-    font-size: large;
+    font-size: medium;
 }
-footer{
+
+footer
+{
     box-shadow: 0 0 3px black  ;/*linie umbra jos heder pe x,y  cu raza de estompare*/
     position:fixed;
     bottom: 0px;
     left: 0;
     width: 100%;
-    height: 50px;
-    font-size: large;
- }
+    height: 2em;
+    font-size: medium;
+}
 
-@media (max-width :600px) 
+
+/* Partea de responsive gradata pe etape mai mare ca 1000px si mai mic ca 600px -> 300px -> 200px pe width si high
+Marim pentru mai mult de 1000px si reducem treptat dimensiunea la elementele ce distorsioneaza pagina */
+@media (min-width :1000px ), (min-height :1000px )
 {
+    header
+    {
+        padding: 1em;
+        height: 3em;
+    }
+    header ul li
+    {
+        height: 3em;
+        line-height: 3em;
+    }
+    
+    .logo img
+    {
+        width: 3em;
+    }
+    .logo img
+    {
+        width: 3em;
+    }
+    .welcome .welcome__message 
+    {
+        font-size:x-large;
+    }
+    footer
+    {
+        height: 3em;
+        font-size: x-large;
+    }
+}
+
+@media (max-width :600px) , (max-height :600px )
+{
+    header
+    {
+        padding: 0.5em;
+        height: 1.5em;
+    }
+    header ul li
+    {
+        height: 1.5em;
+        line-height: 1.5em;
+    }
     .header_text
     {
         display: none;
     }
+    .logo img
+    {
+        width: 1.5em;
+    }
+    .logo img
+    {
+        width: 1.5em;
+    }
     .welcome .welcome__message 
     {
-        font-size: medium;
+        font-size: small;
     }
     footer
     {
-        font-size: medium;
+        font-size: small;
+        height: 1.5em;
     }
+    
 }
 
-@media (max-width :300px) 
+@media (max-width :400px) , (max-height :400px )
 {
+    header
+    {
+        padding: 0.3em;
+        height: 1em;
+    }
+    header ul li
+    {
+        height: 1em;
+        line-height: 1em;
+    }
     .header_icon_logo
     {
         display: inline;
@@ -120,14 +199,40 @@ footer{
     }
     .welcome .welcome__message
     {
-        font-size: small;
+        font-size: x-small;
     }
     footer
     {
-        font-size: small;
+        font-size: x-small;
+        height: 1em;
     }
-
 }
 
-
-
+@media (max-width :200px) , (max-height :200px )
+{
+    /* header
+    {
+        padding: 0.25em;
+        height: 0.8em;
+    }
+    header ul li
+    {
+        height: 0.8em;
+        line-height: 0.8em;
+    }
+    .welcome .welcome__message
+    {
+        font-size: xx-small;
+    }
+    footer
+    {
+        font-size: xx-small;
+        height: 0.8em;
+    } */
+    *{
+        border: 0;
+        margin:0;
+        padding: 0;
+        font-size: xx-small;
+    }
+}

@@ -1,0 +1,382 @@
+/*Css-ul pentru pagininle de index/login/reset/signup pentru cabinet/doctor/pacient*/
+* {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}/* curatam intai elementele de decoratiuni default */
+
+
+body
+{
+    background-image: url("../images/background.jpg");
+    background-size: 100% 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+header
+{
+    padding: 1em;
+    height: 2em;
+    box-shadow: 0 0 3px black  ;/*linie umbra jos heder pe x,y  cu raza de estompare*/
+    background-color: rgb(86, 170, 108);
+    
+}
+
+/* scoatem partea de albastru de la butoane */
+a { color: inherit; } 
+
+/* dimensiunea logo imagine */
+.logo img
+{
+    width: 2em; 
+    height: auto;
+    border-radius: 0.6em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.2em;
+}
+
+.header_icon_logo
+{
+    display: none;
+}
+
+/*if cu clasa pentru a modifica doar pagina de index cu 2 butoane in stanga si dreapta
+nu si pagina de reset ce are 6 butoane*/
+.headers-2-buttons ul
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+header ul li
+{
+    
+    display: block;
+    width: calc(16.6% - 2px); /*  6 butoane */
+    float: left;
+    height: 2em;
+    text-align: center;
+    line-height: 2em;
+    margin-right: 2px;
+    z-index: 9999; /* facem meniul suprapus peste toate celelalte elemente cand coboara. Fara astea doua devine transparent */
+    position: relative;  
+}
+
+
+header ul li a
+{
+    display: block;
+    user-select: none;
+}
+
+header ul li a:hover 
+{
+    background-color:rgb(41, 107, 21) ;
+    color: rgb(20, 54, 28);
+    transition:.5s ease;
+    border-radius: 1em;
+}
+
+
+header ul li ul li
+{
+    display: none;
+    width: 100%;
+}
+
+header ul li:hover ul li {
+    display: block;
+    background-color: rgb(86, 170, 108);
+}
+
+footer
+{
+    box-shadow: 0 0 3px black  ;/*linie umbra jos heder pe x,y  cu raza de estompare*/
+    position:fixed;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    font-size: medium;
+}
+
+
+.Login-reset
+{
+    border-radius: 2em;
+    background-color: #f1f1f1;
+    padding: 4em;
+    padding-top: 10%;
+    width: 40%;
+    /* height: 40%; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: medium;
+}
+
+.Login-reset .Login-reset__formHeader__logo
+{
+    width: 20%;
+    height: 20%;
+    border-radius: 2em;
+    position: absolute;
+    top: -10%;
+    left: 40%;
+}
+
+
+.Login-reset h1
+{
+    padding: 0.5em;
+}
+
+.Login-reset__form input 
+{
+    width: 100%;
+    padding: 1em 1em;
+    margin: 2em 0em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 0.5em; 
+    text-indent: 0em;
+
+  }
+
+
+.Login-reset__form button
+{
+    border-radius: 0.5em; 
+    background-color: rgb(86, 170, 108);
+    color: white;
+    padding: 1.2em 1.5em;
+    /* margin: 8px 0; */
+    border: none;
+    cursor: pointer;
+    width: 100%; 
+}  
+
+.Login-reset__form button:hover 
+{
+    opacity: 0.8;
+}
+
+
+.Login-reset__form label
+{
+    font-weight: bold;
+    position:absolute;
+    margin: 0em;
+    margin-left: 0.5em; 
+    
+}
+
+.Login-reset__formFooter span 
+{
+    display: block;
+}
+
+
+
+
+/* Partea de responsive gradata pe etape mai mare ca 1000px si mai mic ca 600px -> 400px -> 200px pe width si high
+Marim pentru mai mult de 1000px si reducem treptat dimensiunea la elementele ce distorsioneaza pagina */
+@media (min-width :1000px ), (min-height :1000px )
+{
+    header
+    {
+        padding: 1.5em;
+        /* height: 3em; */
+    }
+    header ul li
+    {
+        height: 3em;
+        line-height: 3em;
+    }
+
+    .Login-reset
+    {
+        padding: 3em;
+        font-size: large;
+    }
+    
+    .logo img
+    {
+        width: 3em;
+    }
+    .logo img
+    {
+        width: 3em;
+    }
+    footer
+    {
+        /* height: 3em; */
+        font-size: x-large;
+    }
+}
+
+@media (max-height :600px )
+{
+    header
+    {
+        padding: 0em;
+        /* height: 1.5em; */
+    }
+    header ul li
+    {
+        /* height: 1.5em; */
+        /* line-height: 1.5em; */
+        padding: 0em;
+    }
+    .header_text
+    {
+        display: none;
+    }
+    .logo img
+    {
+        width: 1.5em;
+    }
+    .Login-reset img
+    {
+        display: none;
+    }
+
+    footer
+    {
+        font-size: small;
+        /* height: 1.5em; */
+    }
+
+    .Login-reset
+    {
+        border-radius: 1em;
+        padding: 0em;
+        /* width: 12em; */
+        /* padding-top: 0em; */
+        font-size: small;
+        width: 90%;
+        /* height: 55%; */
+
+    }
+    .Login-reset h1
+    {
+        padding: 0em;
+    }
+    .Login-reset__form input 
+    {
+        padding: 0em;
+        margin: 1.5em 0em;
+    }
+    
+    .Login-reset__form button
+    {
+        width: 100%;
+        padding: 0em;
+    }  
+    .Login-reset__form label
+    {
+        margin-left: 0.5em; 
+    }
+
+
+    
+}
+
+
+@media  (max-height :400px ),(max-width :400px )
+{
+    header
+    {
+        padding: 0.3em;
+    
+    }
+    .header_text
+    {
+        display: none;
+    }
+    header ul li
+    {
+        height: 1em;
+        line-height: 1em;
+    }
+    .header_icon_logo
+    {
+        display: inline;
+    }
+    .logo img
+    {
+        display: none;
+    }
+
+    footer
+    {
+        font-size: x-small;
+        
+    }
+    .header_text
+    {
+        display: none;
+    }
+
+    
+    .Login-reset
+    {
+        font-size: x-small;
+        width: 100%;
+    }
+    .Login-reset__form input 
+    {
+        margin: 1em 0em;
+    }
+    
+    *{
+        border: 0;
+        margin:0;
+        padding: 0;
+        font-size: x-small;
+    }
+    
+}
+
+@media (max-width :200px) , (max-height :200px )
+{
+    header
+    {
+        padding: 0.25em;
+        height: 0.8em;
+    }
+    .header_text
+    {
+        display: none;
+    }
+    header ul li
+    {
+        height: 0.8em;
+        line-height: 0.8em;
+    }
+    
+    footer
+    {
+        height: 0.8em;
+    }
+
+
+    *{
+        border: 0;
+        margin:0;
+        padding: 0;
+        font-size: xx-small;
+    }
+}
+

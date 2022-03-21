@@ -42,7 +42,7 @@ a { color: inherit; }
 
 header ul li
 {
-    
+
      /*width: calwc(16.6% - 2px); 6 butoane butoane doctor/cabinet*/
     width: calc(20% - 2px); /* 5 butoane butoane pacient*/
     float: left;

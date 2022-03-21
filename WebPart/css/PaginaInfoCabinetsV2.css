@@ -7,7 +7,6 @@
     font-size: 100%;
 }/* curatam intai elementele de decoratiuni default */
 
-
 body
 {
     background-image: url("../images/background.jpg");
@@ -16,7 +15,6 @@ body
     background-repeat: no-repeat;
     background-position: center;
 }
-
 
 header
 {
@@ -114,113 +112,81 @@ footer
 }
 
 
-
-
-
-.reset-password
+main h2
 {
-    border-radius: 2em;
-    background-color: #f1f1f1;
-    padding: 4em;
-    width: 60%;
-    /* height: 40%; */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
 }
 
-.reset-password h1
+main .files .files__select_no_pages , label
 {
+    text-align: center;
+    padding: 0.2em;
+}
+
+
+
+
+.cabinets
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5em;
+    grid-auto-rows: minmax(0.1em, auto);
+}
+
+.cabinets table
+{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+}
+
+.cabinets td, th
+{
+    border: 1px solid #dddddd;
+    text-align: left;
     padding: 0.5em;
 }
 
-.reset-password__form input 
+tr:nth-child(even) 
 {
-    width: 100%;
-    padding: 1em 1em;
-    margin: 2em 0em;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    border-radius: 0.5em; 
-    text-indent: 0em;
-
-  }
-
-
-.reset-password__form button
-{
-    border-radius: 0.5em; 
-    background-color: rgb(86, 170, 108);
-    color: white;
-    padding: 1.2em 1.5em;
-    /* margin: 8px 0; */
-    border: none;
-    cursor: pointer;
-    width: 100%; 
-}  
-
-.reset-password__form button:hover 
-{
-    opacity: 0.8;
+    background-color: #dddddd;
 }
 
-
-.reset-password__form label
+.cabinets__select_no_pages
 {
-    font-weight: bold;
-    position:absolute;
-    margin: 0em;
-    margin-left: 0.5em; 
-    
+  padding: 0.4em 0.5em;
+  text-align: left;
+  /* width: 100%; */
 }
-
-
-
-@media (min-width :1000px) 
+.cabinets label
 {
-    .reset-password
-    {
-        border-radius: 2em;
-        padding: 4em;
-    }
+  font-weight: bold;
+  /* position: relative; */
+  /* margin-left: 0.5em;  */
+
 }
-
-
 
 @media (max-width :600px) 
 {
-    .reset-password 
+    .cabinets td, th
     {
-        border-radius: 1em;
-        padding: 2em;
-        width: 15em;
+        padding: 0em;
+    }
+    .cabinets 
+    {
+        font-size: 14px;
     }
 }
 
 @media (max-width :300px) 
 {
-    .reset-password
-    {
-        border-radius: 1em;
-        padding: 0em;
-        width: 12em;
-    }
-    .reset-password__form input 
-    {
-        padding: 1em 0em;
-    }
-    
-    .reset-password__form button
-    {
-        width: 100%; 
-    }  
-    .reset-password__form button
-    {
-        border-radius: 0.5em; 
-        width: 100%; 
-    }  
 
+    .cabinets 
+    {
+        font-size: 7px;
+    }
 }
