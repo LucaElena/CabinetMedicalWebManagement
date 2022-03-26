@@ -56,6 +56,8 @@ nu si pagina de reset ce are 6 butoane*/
 }
 
 
+
+
 header ul li
 {
     
@@ -69,6 +71,7 @@ header ul li
     z-index: 9999; /* facem meniul suprapus peste toate celelalte elemente cand coboara. Fara astea doua devine transparent */
     position: relative;  
 }
+
 
 
 header ul li a
@@ -108,6 +111,11 @@ footer
     font-size: medium;
 }
 
+.header_button__dropdown
+{
+    display: flex;
+    flex-flow: column wrap;
+}
 
 .Login-reset
 {
