@@ -107,17 +107,13 @@ footer {
     transform: translate( 0%, 5%);
 }
 
-
-/*   
-.schedul .schedul__details
-{
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  background-color:white;
-
-} */
+.schedul .schedul__details {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: white;
+}
 
 .schedul .schedul__calendar {
     grid-column-start: 1;
@@ -194,11 +190,40 @@ footer {
     text-align: center;
 }
 
-.schedule__calendar__left_week_btn {
+.schedule__calendar__left_day_btn 
+{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 14;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.2em;
+    font-size: medium;
+    text-align: center;
+    border: none;
+}
+
+.schedule__calendar__left_week_btn
+{
+
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 3;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.2em;
+    font-size: medium;
+    text-align: center;
+    border: none;
+}
+
+/* .schedule__calendar__right_day_btn { */
+.schedule__calendar__right_day_btn 
+{
+    grid-column-start: 16;
+    grid-column-end: 17;
+    grid-row-start: 3;
+    grid-row-end: 14;
     background-color: rgba(255, 255, 255, 0.5);
     padding: 0.2em;
     font-size: medium;
@@ -248,8 +273,10 @@ footer {
     display: grid;
     grid-column: 2/ span 14;
     grid-row-start: 2;
+    grid-row-end: 7;
     grid-template-columns: repeat(14, 1fr);
     grid-template-rows: auto;
+    /* background-color: rgb(86, 170, 108); */
 }
 
 .schedule__calendar__inside__head {
@@ -459,7 +486,11 @@ footer {
         font-size: x-small;
     }
     .schedule__calendar__month {
-        font-size: small;
+        font-size: x-small;
+    }
+    .hover-value {
+        top: 0em;
+        font-size: xx-small;
     }
 }
 

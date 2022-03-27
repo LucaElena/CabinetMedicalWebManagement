@@ -1,3 +1,4 @@
+
 var today = new Date();
 var day = today.getDay(); //ziua saptamanii 0 pana la 6
 var currentYear = today.getFullYear();
@@ -7,44 +8,48 @@ var currentStartHour = 8;
 var startHour = 8;
 var midHour = 14;
 var noHoursPerRow = 12;
+
 console.log("Y=" + currentYear + " M=" + currentMonth + " D=" + currentDay + " H=" + currentStartHour);
 
 
 var mounth_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 var week_names = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
+
+//Adaugam evenimente de ascultare pe butoanele de stanga dreapta din calendar
 let monthLeftBtn = document.getElementById("month_leftBtn");
 let monthRightBtn = document.getElementById("month_rightBtn");
-
 if (monthLeftBtn && monthRightBtn) {
     monthLeftBtn.addEventListener("click", function() { change_curent_month(-1) });
     monthRightBtn.addEventListener("click", function() { change_curent_month(1) });
+    console.log("Add month buttons listener");
 }
 
 let weekLeftBtn = document.getElementById("week_leftBtn");
 let weekRightBtn = document.getElementById("week_rightBtn");
-
-if (weekLeftBtn || weekRightBtn) {
+if (weekLeftBtn && weekRightBtn) {
     weekLeftBtn.addEventListener("click", function() { change_curent_week(-1) });
     weekRightBtn.addEventListener("click", function() { change_curent_week(1) });
+    console.log("Add week buttons listener");
 }
 
+let dayLeftBtn = document.getElementById("day_leftBtn");
+let dayRightBtn = document.getElementById("day_rightBtn");
+if (dayLeftBtn && dayRightBtn) {
+    dayLeftBtn.addEventListener("click", function() { change_curent_day(-1) });
+    dayRightBtn.addEventListener("click", function() { change_curent_day(1) });
+    console.log("Add day buttons listener");
+}
 
 let hoursUpBtn = document.getElementById("hours_upBtn");
 let hoursDownBtn = document.getElementById("hours_downBtn");
 if (hoursUpBtn && hoursDownBtn) {
     hoursUpBtn.addEventListener("click", function() { change_curent_hours(-1) });
     hoursDownBtn.addEventListener("click", function() { change_curent_hours(1) });
+    console.log("Add hour buttons listener");
 }
 
-let dayLeftBtn = document.getElementById("day_leftBtn");
-let dayRightBtn = document.getElementById("day_rightBtn");
-
-if (dayLeftBtn && dayRightBtn) {
-    day_leftBtn.addEventListener("click", function() { change_curent_day(-1) });
-    day_rightBtn.addEventListener("click", function() { change_curent_day(1) });
-}
-
+//Functiile de pe butoanele de stanga dreapta din calendar
 function change_curent_month(direction) {
 
     let current_day = new Date(currentYear, currentMonth, currentDay, 0, 0, 0, 0);
@@ -55,7 +60,7 @@ function change_curent_month(direction) {
     currentMonth = new_start_day.getMonth();
     currentDay = new_start_day.getDate();
     currentStartHour = 8;
-
+    console.log("Change current month");
     print_schedule(2);
 }
 
@@ -68,7 +73,7 @@ function change_curent_week(direction) {
     currentMonth = new_start_day.getMonth();
     currentDay = new_start_day.getDate();
     currentStartHour = 8;
-    // console.log("Change current week");
+    console.log("Change current week");
     print_schedule(1);
 }
 
@@ -81,6 +86,7 @@ function change_curent_day(direction) {
     currentMonth = new_start_day.getMonth();
     currentDay = new_start_day.getDate();
     currentStartHour = 8;
+    console.log("Change current day");
     print_schedule(0);
 }
 
@@ -89,11 +95,12 @@ function change_curent_day(direction) {
 
 function change_curent_hours(direction) {
     //Avem doar 2 inceputuri 
-    if (currentStartHour == 8)
+    if (currentStartHour == 8) {
         currentStartHour = midHour;
-    else
+    } else {
         currentStartHour = startHour;
-    console.log("new current star hour=" + currentStartHour);
+    }
+    console.log("Change current day hour=" + currentStartHour);
     print_schedule(0);
 }
 
@@ -171,6 +178,7 @@ function print_schedule(firstDay) {
         }
     }
 }
+
 
 
 
